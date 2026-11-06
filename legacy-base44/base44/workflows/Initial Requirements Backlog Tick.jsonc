@@ -1,0 +1,48 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "*/10 * * * *",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Initial Requirements Backlog Tick",
+  "description": "Every ten minutes process the bounded initial jurisdiction-by-category backlog. Human source and applicability reviews remain visible but do not block other cells. Configured budget pauses and leases are enforced by the function.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "initial_requirements_backlog_tick",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "process_initial_backlog": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "runRequirementResearch",
+            "args": {
+              "mode": "initial",
+              "trigger_type": "Workflow"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Continue initial requirements research",
+            "description": "Bounded work; drafts and verification are separate from approval"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+# Example only: no credentials, no real hosts. Values are supplied by IT at deployment.
+services:
+  retriever:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    env_file:
+      - .env
+    ports:
+      # Bind to the internal interface only; the service must not be reachable from the internet.
+      - "127.0.0.1:8443:8443"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 512m
+    cpus: "0.50"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

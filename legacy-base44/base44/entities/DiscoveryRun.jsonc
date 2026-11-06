@@ -1,0 +1,114 @@
+{
+  "name": "DiscoveryRun",
+  "type": "object",
+  "properties": {
+    "run_ref": {
+      "type": "string"
+    },
+    "run_kind": {
+      "type": "string",
+      "enum": [
+        "Source discovery",
+        "Requirements baseline research",
+        "Collector self-test",
+        "Notification test"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "gray",
+        "gray"
+      ]
+    },
+    "trigger_type": {
+      "type": "string",
+      "enum": [
+        "Manual",
+        "Workflow"
+      ],
+      "enumColors": [
+        "teal",
+        "blue"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Running",
+        "Completed",
+        "Partially completed",
+        "Blocked \u2014 budget or usage limit",
+        "Failed"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "orange",
+        "red",
+        "red"
+      ]
+    },
+    "batch_limit": {
+      "type": "number"
+    },
+    "processed": {
+      "type": "number"
+    },
+    "candidates_created": {
+      "type": "number"
+    },
+    "candidates_tested_ok": {
+      "type": "number"
+    },
+    "drafts_created": {
+      "type": "number"
+    },
+    "llm_calls": {
+      "type": "number"
+    },
+    "credits_estimated": {
+      "type": "number"
+    },
+    "credits_note": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "failures": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_ref",
+    "run_kind"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "one_time",
+      "cron_expression": null,
+      "one_time_date": "2026-11-04T15:00:00Z",
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Security Scan Capture Current",
+  "description": "Second isolated one-time capture used only to observe whether the stored scan reports as current while this workflow is still active. Starts one scan, waits the documented window, reads results matched by requested_at, and changes nothing else.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "security_scan_capture_current",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "start_scan": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "start"
+          },
+          "then": "wait_ten",
+          "x-base44": {
+            "title": "Start security scan",
+            "description": "Returns at once, no findings"
+          }
+        }
+      },
+      {
+        "wait_ten": {
+          "wait": "PT10M",
+          "then": "read_results",
+          "x-base44": {
+            "title": "Wait for scan",
+            "description": "Documented scanning window"
+          }
+        }
+      },
+      {
+        "read_results": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "results",
+            "after": "${ .start_scan.requested_at }",
+            "max_findings": 100
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Read matched results",
+            "description": "Only a scan for this request"
+          }
+        }
+      }
+    ]
+  }
+}

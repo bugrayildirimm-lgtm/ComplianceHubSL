@@ -1,0 +1,45 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "one_time",
+      "cron_expression": null,
+      "one_time_date": "2026-11-04T14:30:00Z",
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Job Invocation No-Network Test",
+  "description": "One-time isolated invocation test for the bounded job entry point. Calls jobInvocation with no arguments: it fetches no publisher, writes no decision, grants no role and claims no queue work. Establishes scheduler/authentication behaviour only, not protected retrieval.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "job_invocation_no_network_test",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "invoke_bounded_job": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "jobInvocation",
+            "args": {}
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Invoke bounded job (no network)",
+            "description": "Records the invoking account and server-selected scope only"
+          }
+        }
+      }
+    ]
+  }
+}

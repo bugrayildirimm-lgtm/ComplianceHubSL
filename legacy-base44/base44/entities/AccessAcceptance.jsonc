@@ -1,0 +1,137 @@
+{
+  "name": "AccessAcceptance",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "Fixture set",
+        "Observation"
+      ],
+      "enumColors": [
+        "gray",
+        "blue"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "test_user_id": {
+      "type": "string"
+    },
+    "test_user_email": {
+      "type": "string"
+    },
+    "prepared_by_user_id": {
+      "type": "string"
+    },
+    "preparation_reason": {
+      "type": "string"
+    },
+    "non_editor_confirmation": {
+      "type": "string"
+    },
+    "requirement_record_id": {
+      "type": "string"
+    },
+    "audit_record_id": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "Not admitted",
+        "Admitted read-only",
+        "Deactivated"
+      ],
+      "enumColors": [
+        "yellow",
+        "blue",
+        "red"
+      ]
+    },
+    "probe_group": {
+      "type": "string",
+      "enum": [
+        "Native probes",
+        "Admission retry"
+      ],
+      "enumColors": [
+        "blue",
+        "yellow"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "Prepared",
+        "Started",
+        "Recorded, review pending"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "blue"
+      ]
+    },
+    "stop_required": {
+      "type": "boolean"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "authentication_fingerprint": {
+      "type": "string"
+    },
+    "identity_json": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "before_json": {
+      "type": "string",
+      "maxLength": 10000
+    },
+    "after_json": {
+      "type": "string",
+      "maxLength": 10000
+    },
+    "request_results_json": {
+      "type": "string",
+      "maxLength": 16000
+    },
+    "evidence_class": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "kind",
+    "run_id",
+    "test_user_id",
+    "state"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

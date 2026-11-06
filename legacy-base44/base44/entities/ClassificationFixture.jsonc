@@ -1,0 +1,125 @@
+{
+  "name": "ClassificationFixture",
+  "type": "object",
+  "properties": {
+    "case_key": {
+      "type": "string",
+      "description": "Stable case id used by the regression harness"
+    },
+    "label": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Which real failure or real capture this case comes from"
+    },
+    "url": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "expected_page_type": {
+      "type": "string",
+      "enum": [
+        "Listing or index",
+        "Individual publication",
+        "Ambiguous or incomplete"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "yellow"
+      ]
+    },
+    "expected_retain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Substantive statements that must survive extraction"
+    },
+    "expected_forbid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Text that must not appear in the substantive text"
+    },
+    "expected_alert": {
+      "type": "string",
+      "enum": [
+        "Alert appropriate",
+        "No alert from this page",
+        "Review required, no alert"
+      ],
+      "enumColors": [
+        "green",
+        "gray",
+        "yellow"
+      ],
+      "description": "What the page type alone justifies. An unchanged repeat is still an individual publication; it produces no new alert because the comparison says unchanged."
+    },
+    "expected_change_type": {
+      "type": "string"
+    },
+    "expected_item_records": {
+      "type": "number",
+      "description": "Minimum item-level records expected from a register-style listing"
+    },
+    "structure_json": {
+      "type": "string",
+      "maxLength": 9000,
+      "description": "Structural snapshot as the browser reported it, without the region text (held in region_text so neither field is truncated)"
+    },
+    "region_text": {
+      "type": "string",
+      "maxLength": 9000,
+      "description": "The selected content region as text, kept separately so the structural snapshot is never cut off by a field limit"
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 9000
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "case_key",
+    "label",
+    "url",
+    "expected_page_type"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

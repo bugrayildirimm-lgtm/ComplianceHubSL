@@ -1,0 +1,136 @@
+{
+  "name": "RequirementBaseline",
+  "type": "object",
+  "properties": {
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "A. Market Entry & Legal",
+        "B. Slots Technical",
+        "C. Live Casino Game Technical",
+        "D. Live Studio & Operational"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "purple",
+        "green"
+      ]
+    },
+    "internal_classification": {
+      "type": "string"
+    },
+    "priority_rank": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Not started",
+        "Queued",
+        "Researching",
+        "Drafts available",
+        "Drafts prepared",
+        "Awaiting review",
+        "Awaiting source verification",
+        "Awaiting applicability/requirement review",
+        "Reviewed within stated scope",
+        "Blocked \u2014 no official instrument located",
+        "Blocked \u2014 retrieval failed",
+        "Blocked \u2014 budget or usage limit"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "yellow",
+        "blue",
+        "blue",
+        "purple",
+        "yellow",
+        "purple",
+        "green",
+        "red",
+        "red",
+        "red"
+      ]
+    },
+    "drafts_count": {
+      "type": "number"
+    },
+    "instruments_found": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "language": {
+      "type": "string"
+    },
+    "last_run_id": {
+      "type": "string"
+    },
+    "last_run_at": {
+      "type": "string"
+    },
+    "attempts": {
+      "type": "number"
+    },
+    "gaps": {
+      "type": "string"
+    },
+    "block_reason": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "initial_processed_at": {
+      "type": "string"
+    },
+    "lease_token": {
+      "type": "string"
+    },
+    "lease_until": {
+      "type": "string"
+    },
+    "next_attempt_at": {
+      "type": "string"
+    },
+    "scope_complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "jurisdiction_id",
+    "jurisdiction_name",
+    "category"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

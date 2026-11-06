@@ -1,0 +1,47 @@
+{
+  "name": "Monthly Source Re-discovery",
+  "description": "Monthly re-search for new official sources, changed addresses and replacement publication channels for jurisdictions that still lack coverage.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "monthly_source_rediscovery",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "rediscover_sources": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "discoverSources",
+            "args": {
+              "limit": 2
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Propose sources for uncovered jurisdictions",
+            "description": "Proposals always await human verification"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 7 1 * *",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

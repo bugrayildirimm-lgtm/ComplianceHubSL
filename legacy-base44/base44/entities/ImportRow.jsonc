@@ -1,0 +1,151 @@
+{
+  "name": "ImportRow",
+  "type": "object",
+  "properties": {
+    "batch_id": {
+      "type": "string"
+    },
+    "import_row_key": {
+      "type": "string",
+      "description": "Unique key preventing repeat-file duplication"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "source_sheet": {
+      "type": "string"
+    },
+    "source_row": {
+      "type": "string"
+    },
+    "source_period": {
+      "type": "string"
+    },
+    "jurisdiction_name_raw": {
+      "type": "string"
+    },
+    "jurisdiction_name_trimmed": {
+      "type": "string"
+    },
+    "internal_status_raw": {
+      "type": "string"
+    },
+    "proposed_internal_status": {
+      "type": "string"
+    },
+    "proposed_owner_team": {
+      "type": "string"
+    },
+    "owner_validation": {
+      "type": "string"
+    },
+    "legal_verification_status": {
+      "type": "string"
+    },
+    "product_scope_status": {
+      "type": "string"
+    },
+    "import_review_status": {
+      "type": "string"
+    },
+    "duplicate_review_group": {
+      "type": "string"
+    },
+    "migration_flags": {
+      "type": "string"
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Warning",
+        "Possible duplicate",
+        "Invalid",
+        "Already imported"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "orange",
+        "red",
+        "gray"
+      ]
+    },
+    "validation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duplicate_of_row_key": {
+      "type": "string"
+    },
+    "review_decision": {
+      "type": "string",
+      "enum": [
+        "Pending review",
+        "Approved for promotion",
+        "On hold",
+        "Rejected"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "review_note": {
+      "type": "string"
+    },
+    "promoted_jurisdiction_id": {
+      "type": "string"
+    },
+    "promoted_jurisdiction_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "import_row_key"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

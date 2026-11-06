@@ -1,0 +1,96 @@
+{
+  "name": "AuditEvent",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_label": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "actor_email": {
+      "type": "string"
+    },
+    "actor_name": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "recorded_by": {
+      "type": "string",
+      "description": "Trusted server operation; client reports are explicitly unverified"
+    },
+    "occurred_at": {
+      "type": "string"
+    },
+    "actor_user_id": {
+      "type": "string"
+    },
+    "app_role": {
+      "type": "string"
+    },
+    "workspace_role": {
+      "type": "string"
+    },
+    "evidence_class": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_type",
+    "summary"
+  ],
+  "rls": {
+    "read": {
+      "$and": [
+        {
+          "user_condition": {
+            "data.access_admitted": true
+          }
+        },
+        {
+          "$or": [
+            {
+              "user_condition": {
+                "data.audit_access": true
+              }
+            },
+            {
+              "user_condition": {
+                "role": "admin"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

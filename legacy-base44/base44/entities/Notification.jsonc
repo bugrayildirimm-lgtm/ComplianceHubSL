@@ -1,0 +1,92 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "Urgent",
+        "Daily digest",
+        "Informational"
+      ],
+      "enumColors": [
+        "red",
+        "blue",
+        "gray"
+      ]
+    },
+    "alert_id": {
+      "type": "string"
+    },
+    "link_path": {
+      "type": "string"
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "delivery_channel": {
+      "type": "string",
+      "enum": [
+        "In-app",
+        "Email"
+      ],
+      "enumColors": [
+        "gray",
+        "blue"
+      ]
+    },
+    "delivery_status": {
+      "type": "string",
+      "enum": [
+        "Delivered in-app",
+        "Not configured",
+        "Failed"
+      ],
+      "enumColors": [
+        "green",
+        "gray",
+        "red"
+      ]
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

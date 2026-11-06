@@ -1,0 +1,112 @@
+{
+  "name": "CrawlLink",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "cycle_id": {
+      "type": "string"
+    },
+    "queue_kind": {
+      "type": "string",
+      "enum": [
+        "New publication",
+        "Amendment recheck",
+        "Attachment",
+        "Historical research"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "gray",
+        "yellow"
+      ],
+      "description": "Which queue this row belongs to. Queues are processed separately with their own budgets."
+    },
+    "url": {
+      "type": "string"
+    },
+    "parent_url": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "Listing",
+        "Publication",
+        "Attachment"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "gray"
+      ]
+    },
+    "depth": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Processed",
+        "Blocked"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "red"
+      ]
+    },
+    "attempts": {
+      "type": "number"
+    },
+    "last_attempt_at": {
+      "type": "string"
+    },
+    "document_id": {
+      "type": "string"
+    },
+    "document_ref": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source_id",
+    "cycle_id",
+    "url",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

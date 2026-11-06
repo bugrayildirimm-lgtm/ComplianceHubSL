@@ -1,0 +1,79 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "access_role": {
+      "type": "string",
+      "enum": [
+        "Administrator",
+        "Regulatory Compliance",
+        "Technical Compliance",
+        "Approver",
+        "Read-only"
+      ],
+      "enumColors": [
+        "purple",
+        "blue",
+        "purple",
+        "green",
+        "gray"
+      ]
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "can_approve": {
+      "type": "boolean"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "authority_confirmed_by_user_id": {
+      "type": "string"
+    },
+    "authority_confirmed_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_email",
+    "access_role"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

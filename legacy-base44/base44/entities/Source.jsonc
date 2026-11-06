@@ -1,0 +1,349 @@
+{
+  "name": "Source",
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string",
+      "description": "Publishing authority as evidenced"
+    },
+    "url": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "Regulator publication page",
+        "Technical standards",
+        "Legislation database",
+        "Official gazette",
+        "Parliamentary bill or consultation",
+        "Court judgment",
+        "Enforcement publication",
+        "Other official"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "blue",
+        "gray",
+        "yellow",
+        "gray",
+        "red",
+        "gray"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "territorial_scope": {
+      "type": "string",
+      "description": "Territory the source actually covers, as evidenced"
+    },
+    "subject_coverage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_gaps": {
+      "type": "string"
+    },
+    "retrieval_http_status": {
+      "type": "number"
+    },
+    "retrieval_result": {
+      "type": "string"
+    },
+    "retrieval_tested_at": {
+      "type": "string"
+    },
+    "retrieval_page_title": {
+      "type": "string"
+    },
+    "publisher_evidence": {
+      "type": "string"
+    },
+    "collection_method": {
+      "type": "string",
+      "enum": [
+        "Official feed or API",
+        "Direct page retrieval",
+        "Browser rendering",
+        "Not configured"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "yellow",
+        "gray"
+      ]
+    },
+    "check_frequency": {
+      "type": "string",
+      "enum": [
+        "Six-hourly",
+        "Daily",
+        "Weekly",
+        "Manual"
+      ],
+      "enumColors": [
+        "purple",
+        "blue",
+        "gray",
+        "gray"
+      ]
+    },
+    "priority": {
+      "type": "boolean"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "Awaiting source verification",
+        "Verified",
+        "Rejected",
+        "Superseded"
+      ],
+      "enumColors": [
+        "yellow",
+        "green",
+        "red",
+        "gray"
+      ]
+    },
+    "verification_evidence": {
+      "type": "string"
+    },
+    "verified_by": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string"
+    },
+    "collection_authorised": {
+      "type": "boolean",
+      "description": "Builder instruction authorising read-only collection of this exact URL. Separate from source verification, legal applicability and any approval decision."
+    },
+    "collection_authorised_at": {
+      "type": "string"
+    },
+    "collection_authorised_by": {
+      "type": "string"
+    },
+    "collection_authorisation_note": {
+      "type": "string",
+      "description": "What the authorisation covers and what it explicitly does not decide"
+    },
+    "discovered_by": {
+      "type": "string"
+    },
+    "discovery_run_id": {
+      "type": "string"
+    },
+    "health_status": {
+      "type": "string",
+      "enum": [
+        "Not configured",
+        "Awaiting source verification",
+        "Queued",
+        "Running",
+        "Checked \u2014 new or changed",
+        "Checked \u2014 no change",
+        "Failed or blocked",
+        "Partially processed",
+        "Stale or overdue"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "blue",
+        "blue",
+        "green",
+        "green",
+        "red",
+        "yellow",
+        "red"
+      ]
+    },
+    "fetch_status": {
+      "type": "string"
+    },
+    "extraction_status": {
+      "type": "string"
+    },
+    "analysis_status": {
+      "type": "string"
+    },
+    "notification_status": {
+      "type": "string"
+    },
+    "last_attempt_at": {
+      "type": "string"
+    },
+    "last_success_at": {
+      "type": "string"
+    },
+    "next_check_at": {
+      "type": "string"
+    },
+    "failure_reason": {
+      "type": "string"
+    },
+    "consecutive_failures": {
+      "type": "number"
+    },
+    "last_content_hash": {
+      "type": "string"
+    },
+    "last_document_title": {
+      "type": "string"
+    },
+    "alert_count": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean",
+      "description": "Isolated test fixture, never a live regulatory source"
+    },
+    "provenance_reference_url": {
+      "type": "string"
+    },
+    "sample_document_url": {
+      "type": "string"
+    },
+    "publication_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verified_publisher_hash": {
+      "type": "string"
+    },
+    "review_attention": {
+      "type": "string"
+    },
+    "pages_per_job": {
+      "type": "number"
+    },
+    "crawl_budget": {
+      "type": "number"
+    },
+    "max_link_depth": {
+      "type": "number"
+    },
+    "allowed_document_hosts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "traversal_prefixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "crawl_scope": {
+      "type": "string"
+    },
+    "crawl_cycle_id": {
+      "type": "string"
+    },
+    "crawl_mode": {
+      "type": "string",
+      "enum": [
+        "Historical",
+        "Recurring"
+      ],
+      "enumColors": [
+        "blue",
+        "green"
+      ]
+    },
+    "crawl_active": {
+      "type": "boolean"
+    },
+    "crawl_lease_until": {
+      "type": "string"
+    },
+    "crawl_lease_token": {
+      "type": "string"
+    },
+    "crawl_known_cursor": {
+      "type": "string"
+    },
+    "crawl_known_seeded": {
+      "type": "boolean"
+    },
+    "crawl_processed": {
+      "type": "number"
+    },
+    "crawl_pending": {
+      "type": "number"
+    },
+    "crawl_stop_reason": {
+      "type": "string"
+    },
+    "historical_finished_at": {
+      "type": "string"
+    },
+    "historical_completed_at": {
+      "type": "string"
+    },
+    "format_gap": {
+      "type": "string"
+    },
+    "official_alternative_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "source_id",
+    "url",
+    "authority"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

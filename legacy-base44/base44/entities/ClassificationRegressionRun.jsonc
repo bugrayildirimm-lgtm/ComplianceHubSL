@@ -1,0 +1,76 @@
+{
+  "name": "ClassificationRegressionRun",
+  "type": "object",
+  "properties": {
+    "run_ref": {
+      "type": "string"
+    },
+    "classifier_version": {
+      "type": "string"
+    },
+    "profile_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Passing",
+        "Failing"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ]
+    },
+    "cases_total": {
+      "type": "number"
+    },
+    "cases_passed": {
+      "type": "number"
+    },
+    "cases_failed": {
+      "type": "number"
+    },
+    "results_json": {
+      "type": "string",
+      "maxLength": 60000,
+      "description": "Per-case expected/actual/pass-fail detail"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_ref",
+    "classifier_version",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

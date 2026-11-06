@@ -1,0 +1,101 @@
+{
+  "name": "LiveStudio",
+  "type": "object",
+  "properties": {
+    "studio_code": {
+      "type": "string"
+    },
+    "studio_name": {
+      "type": "string"
+    },
+    "physical_jurisdiction": {
+      "type": "string",
+      "description": "Where the studio physically operates"
+    },
+    "physical_location_detail": {
+      "type": "string"
+    },
+    "destination_markets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "premises_approval_status": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "Not required",
+        "Applied",
+        "Approved",
+        "Conditional"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "yellow",
+        "green",
+        "yellow"
+      ]
+    },
+    "operations_status": {
+      "type": "string",
+      "enum": [
+        "Operating",
+        "Not operating",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "gray",
+        "gray"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "studio_name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

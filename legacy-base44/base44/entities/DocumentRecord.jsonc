@@ -1,0 +1,311 @@
+{
+  "name": "DocumentRecord",
+  "type": "object",
+  "properties": {
+    "document_ref": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "document_url": {
+      "type": "string"
+    },
+    "requested_url": {
+      "type": "string",
+      "description": "URL the managed browser was asked to open"
+    },
+    "final_url": {
+      "type": "string",
+      "description": "URL the browser actually landed on after redirects"
+    },
+    "document_type": {
+      "type": "string"
+    },
+    "page_type": {
+      "type": "string",
+      "enum": [
+        "Listing or index",
+        "Individual publication",
+        "Ambiguous or incomplete"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "yellow"
+      ],
+      "description": "Structural page type, decided before any regulatory meaning is assessed"
+    },
+    "page_type_basis": {
+      "type": "string",
+      "description": "The structural indicators that produced the page type"
+    },
+    "page_type_version": {
+      "type": "string",
+      "description": "Classifier version that decided the page type"
+    },
+    "extraction_profile": {
+      "type": "string",
+      "description": "Source template profile used to select the content region"
+    },
+    "content_region": {
+      "type": "string",
+      "description": "Which region of the page was used for substantive comparison"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "Classified",
+        "Page type uncertain \u2014 review required",
+        "Held \u2014 classification gate not passing",
+        "Not classified \u2014 listing capture"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "red",
+        "blue"
+      ]
+    },
+    "listing_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Item-level records read from a register-style listing: stable identifier | label | evidence URL"
+    },
+    "listing_item_count": {
+      "type": "number"
+    },
+    "capture_scope": {
+      "type": "string",
+      "description": "What was captured, e.g. listing page, individual publication, attachment"
+    },
+    "capture_trigger": {
+      "type": "string",
+      "description": "What the request revealed about its trigger; never a scheduler attestation"
+    },
+    "language": {
+      "type": "string"
+    },
+    "version_label": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string",
+      "description": "SHA-256 of the captured text as evidence, scoped to that capture"
+    },
+    "substantive_hash": {
+      "type": "string",
+      "description": "SHA-256 of the extracted substantive text, used for comparison"
+    },
+    "extractor_version": {
+      "type": "string",
+      "description": "Version of the extraction rules applied; a change here is not a publisher amendment"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Interface preview of the captured text, bounded for display and selected AI input. Never the limit of the stored evidence"
+    },
+    "size_bytes": {
+      "type": "number",
+      "description": "Length of the text the browser actually captured, before any preview limit"
+    },
+    "captured_chars": {
+      "type": "number",
+      "description": "Characters the managed browser returned for this capture"
+    },
+    "retained_chars": {
+      "type": "number",
+      "description": "Characters actually retained as stored evidence; equals captured_chars only when the full text was saved"
+    },
+    "evidence_file_uri": {
+      "type": "string",
+      "description": "Private storage reference to the complete captured text as saved evidence"
+    },
+    "evidence_stored_at": {
+      "type": "string",
+      "description": "Retrieval time of the text retained in the evidence file"
+    },
+    "evidence_storage_note": {
+      "type": "string",
+      "description": "What the retained evidence covers, and an explicit statement when storage was incomplete"
+    },
+    "fetched_at": {
+      "type": "string"
+    },
+    "publication_date": {
+      "type": "string",
+      "description": "Only when evidenced by the source"
+    },
+    "publication_date_evidenced": {
+      "type": "string",
+      "description": "Date found in the captured content, with where it came from"
+    },
+    "legal_stage_evidenced": {
+      "type": "string",
+      "description": "Legal stage supported by wording in the captured content"
+    },
+    "publication_type_evidenced": {
+      "type": "string",
+      "description": "What kind of publication this is, as supported by the captured content"
+    },
+    "novelty_classification": {
+      "type": "string"
+    },
+    "novelty_basis": {
+      "type": "string"
+    },
+    "completeness": {
+      "type": "string",
+      "description": "Whether the intended publication appears fully captured"
+    },
+    "completeness_scope": {
+      "type": "string",
+      "enum": [
+        "Captured page body only",
+        "Page body plus attachment text",
+        "Document incomplete \u2014 attachment not text-extractable",
+        "Listing only \u2014 not a publication"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "red",
+        "gray"
+      ],
+      "description": "Scope of what is complete. Page-body completeness is never document or publication completeness."
+    },
+    "attachment_gaps": {
+      "type": "string",
+      "description": "Attachments found but not text-extractable, named explicitly"
+    },
+    "passages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Relevant passages taken from the captured content"
+    },
+    "instrument_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Links to underlying instruments actually present on the page"
+    },
+    "first_seen_at": {
+      "type": "string"
+    },
+    "last_rechecked_at": {
+      "type": "string",
+      "description": "When this capture was last re-retrieved for amendment comparison"
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Amended",
+        "Replaced at same URL",
+        "Unchanged"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "yellow",
+        "gray"
+      ]
+    },
+    "extraction_status": {
+      "type": "string",
+      "enum": [
+        "Complete",
+        "Partial",
+        "Failed"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "extraction_note": {
+      "type": "string"
+    },
+    "ocr_used": {
+      "type": "boolean"
+    },
+    "translation_status": {
+      "type": "string",
+      "enum": [
+        "Not required",
+        "Machine translation available",
+        "Not available"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "yellow"
+      ]
+    },
+    "translation_uncertain": {
+      "type": "boolean"
+    },
+    "previous_version_id": {
+      "type": "string"
+    },
+    "diff_summary": {
+      "type": "string"
+    },
+    "alert_id": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    },
+    "collection_mode": {
+      "type": "string"
+    },
+    "analysis_state": {
+      "type": "string"
+    },
+    "extraction_uncertainty": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source_id",
+    "document_url"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

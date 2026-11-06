@@ -1,0 +1,130 @@
+{
+  "name": "ActionItem",
+  "type": "object",
+  "properties": {
+    "action_ref": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "owner_team": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "In progress",
+        "Blocked",
+        "Evidence submitted",
+        "Closed"
+      ],
+      "enumColors": [
+        "blue",
+        "yellow",
+        "red",
+        "teal",
+        "green"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "enumColors": [
+        "red",
+        "orange",
+        "yellow",
+        "gray"
+      ]
+    },
+    "affected_scope": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "linked_alert_id": {
+      "type": "string"
+    },
+    "linked_requirement_id": {
+      "type": "string"
+    },
+    "completion_evidence": {
+      "type": "string"
+    },
+    "evidence_file_uri": {
+      "type": "string"
+    },
+    "completed_at": {
+      "type": "string"
+    },
+    "closed_by": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "action_ref",
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

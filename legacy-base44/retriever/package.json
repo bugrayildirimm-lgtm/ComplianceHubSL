@@ -1,0 +1,15 @@
+{
+  "name": "stakelogic-compliance-retriever",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated HTTPS retrieval service for the Stakelogic Compliance Hub. Validated destinations only, pinned connections, no automatic redirects.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "NODE_EXTRA_CA_CERTS=test/fixtures/localhost-cert.pem node --test test/*.test.js"
+  },
+  "dependencies": {}
+}

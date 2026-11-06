@@ -1,0 +1,75 @@
+{
+  "name": "RequirementVersion",
+  "type": "object",
+  "properties": {
+    "requirement_id": {
+      "type": "string"
+    },
+    "version_number": {
+      "type": "number"
+    },
+    "snapshot_json": {
+      "type": "string",
+      "description": "Immutable reviewed requirement snapshot"
+    },
+    "change_summary": {
+      "type": "string"
+    },
+    "changed_by": {
+      "type": "string"
+    },
+    "approval_status": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approval_date": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "created_via": {
+      "type": "string"
+    },
+    "approval_id": {
+      "type": "string"
+    },
+    "audit_event_id": {
+      "type": "string"
+    },
+    "snapshot_hash": {
+      "type": "string"
+    },
+    "requirement_record_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "requirement_id",
+    "version_number"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

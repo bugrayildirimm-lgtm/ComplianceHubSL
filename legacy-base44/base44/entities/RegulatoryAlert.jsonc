@@ -1,0 +1,329 @@
+{
+  "name": "RegulatoryAlert",
+  "type": "object",
+  "properties": {
+    "alert_ref": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "document_id": {
+      "type": "string"
+    },
+    "document_url": {
+      "type": "string"
+    },
+    "document_version": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "what_changed": {
+      "type": "string"
+    },
+    "why_it_matters": {
+      "type": "string"
+    },
+    "source_passages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publication_type": {
+      "type": "string",
+      "enum": [
+        "Official reminder or guidance on existing obligations",
+        "Consultation",
+        "Consultation outcome / framework development",
+        "Findings or thematic review",
+        "Policy statement or guidance note",
+        "Legislative or regulatory instrument",
+        "Enforcement action or decision",
+        "Court judgment",
+        "General announcement",
+        "Unknown"
+      ],
+      "enumColors": [
+        "teal",
+        "purple",
+        "blue",
+        "blue",
+        "teal",
+        "yellow",
+        "red",
+        "purple",
+        "gray",
+        "gray"
+      ],
+      "description": "What the publication is. Separate from legal stage, novelty and applicability."
+    },
+    "legal_stage": {
+      "type": "string",
+      "enum": [
+        "Official announcement or discussion",
+        "Proposal or draft legislation",
+        "Consultation",
+        "Adopted not yet effective",
+        "In force",
+        "Official guidance",
+        "Enforcement action",
+        "Court judgment",
+        "Unknown"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "purple",
+        "yellow",
+        "green",
+        "teal",
+        "red",
+        "purple",
+        "gray"
+      ]
+    },
+    "company_applicability": {
+      "type": "string",
+      "enum": [
+        "Applicable \u2014 evidenced",
+        "Potentially applicable \u2014 unresolved",
+        "Not applicable \u2014 evidenced",
+        "Unknown \u2014 insufficient facts"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "gray",
+        "gray"
+      ],
+      "description": "Applicability to Stakelogic. Unknown facts stay unresolved, never 'Not applicable'."
+    },
+    "applicability_reason": {
+      "type": "string"
+    },
+    "classification_history": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Append-only record of classification changes with the reason for each"
+    },
+    "publication_date": {
+      "type": "string"
+    },
+    "detection_date": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "consultation_deadline": {
+      "type": "string"
+    },
+    "implementation_deadline": {
+      "type": "string"
+    },
+    "date_confidence": {
+      "type": "string",
+      "enum": [
+        "Evidenced in source",
+        "Not stated in source",
+        "Uncertain"
+      ],
+      "enumColors": [
+        "green",
+        "gray",
+        "yellow"
+      ]
+    },
+    "previously_untracked": {
+      "type": "boolean",
+      "description": "Historical document found late \u2014 baseline material, not a new change"
+    },
+    "affected_products": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_certificates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_studios": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_owner_team": {
+      "type": "string"
+    },
+    "collaborating_teams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low",
+        "Unclassified"
+      ],
+      "enumColors": [
+        "red",
+        "orange",
+        "yellow",
+        "gray",
+        "gray"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "Draft \u2014 unreviewed",
+        "Impact assessment in progress",
+        "Assessed",
+        "Closed"
+      ],
+      "enumColors": [
+        "yellow",
+        "blue",
+        "green",
+        "gray"
+      ]
+    },
+    "assessment_outcome": {
+      "type": "string",
+      "enum": [
+        "Not assessed",
+        "Informational",
+        "Duplicate",
+        "Not applicable",
+        "Requires action"
+      ],
+      "enumColors": [
+        "gray",
+        "gray",
+        "gray",
+        "gray",
+        "red"
+      ]
+    },
+    "assessment_reason": {
+      "type": "string"
+    },
+    "assessed_by": {
+      "type": "string"
+    },
+    "assessed_at": {
+      "type": "string"
+    },
+    "ai_generated": {
+      "type": "boolean"
+    },
+    "duplicate_of": {
+      "type": "string"
+    },
+    "other_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_action_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notification_status": {
+      "type": "string"
+    },
+    "withdrawn": {
+      "type": "boolean",
+      "description": "Withdrawn because the underlying page was not an individual publication. Excluded from actionable counts and notification queues."
+    },
+    "withdrawal_reason": {
+      "type": "string"
+    },
+    "withdrawn_at": {
+      "type": "string"
+    },
+    "withdrawn_by": {
+      "type": "string",
+      "description": "Who withdrew it; automatic corrections are labelled as such, never as a human legal decision"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "alert_ref",
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "report_ref": {
+      "type": "string"
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "Month-end"
+      ],
+      "enumColors": [
+        "blue"
+      ]
+    },
+    "period_start": {
+      "type": "string"
+    },
+    "period_end": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "sections_json": {
+      "type": "string",
+      "description": "Machine-readable report content"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "scope_note": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "report_ref",
+    "report_type"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "name": "MonitoringConfig",
+  "type": "object",
+  "properties": {
+    "config_key": {
+      "type": "string",
+      "description": "Single record, e.g. 'default'"
+    },
+    "monitoring_enabled": {
+      "type": "boolean",
+      "description": "Preference only; it does not start or resume any workflow"
+    },
+    "daily_check_hour_utc": {
+      "type": "number"
+    },
+    "priority_interval_hours": {
+      "type": "number"
+    },
+    "max_sources_per_run": {
+      "type": "number",
+      "description": "Bound on sources processed per bounded batch invocation"
+    },
+    "discovery_batch_size": {
+      "type": "number",
+      "description": "Jurisdictions researched per discovery invocation"
+    },
+    "max_discovery_attempts": {
+      "type": "number"
+    },
+    "requirement_batch_size": {
+      "type": "number"
+    },
+    "monthly_credit_budget": {
+      "type": "number"
+    },
+    "credits_used_estimate": {
+      "type": "number"
+    },
+    "credits_used_note": {
+      "type": "string"
+    },
+    "usage_alert_threshold_pct": {
+      "type": "number"
+    },
+    "budget_paused": {
+      "type": "boolean"
+    },
+    "budget_paused_reason": {
+      "type": "string"
+    },
+    "browser_rendering_status": {
+      "type": "string",
+      "enum": [
+        "Not configured",
+        "Configured",
+        "Unavailable"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "red"
+      ]
+    },
+    "ocr_status": {
+      "type": "string",
+      "enum": [
+        "Not configured",
+        "Configured",
+        "Unavailable"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "red"
+      ]
+    },
+    "external_notification_status": {
+      "type": "string",
+      "enum": [
+        "Not configured",
+        "Configured and tested",
+        "Failed"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "red"
+      ]
+    },
+    "notification_test_note": {
+      "type": "string"
+    },
+    "last_run_at": {
+      "type": "string",
+      "description": "Last recorded collection timestamp; not proof of a scheduled run"
+    },
+    "last_run_summary": {
+      "type": "string"
+    },
+    "last_discovery_run_at": {
+      "type": "string"
+    },
+    "last_requirement_run_at": {
+      "type": "string"
+    },
+    "prerequisite_notes": {
+      "type": "string"
+    },
+    "job_runner_user_id": {
+      "type": "string",
+      "description": "Server-controlled designation of the active account permitted to invoke the bounded job entry point. Grants no business, role or approval permission."
+    },
+    "job_runner_email": {
+      "type": "string"
+    },
+    "job_runner_active": {
+      "type": "boolean"
+    },
+    "job_runner_designated_at": {
+      "type": "string"
+    },
+    "job_runner_designated_by": {
+      "type": "string"
+    },
+    "job_runner_reason": {
+      "type": "string"
+    },
+    "cycle_id": {
+      "type": "string",
+      "description": "Open or last collection cycle, e.g. 2026-11-05-T1"
+    },
+    "cycle_batch": {
+      "type": "number"
+    },
+    "cycle_opened_at": {
+      "type": "string"
+    },
+    "cycle_closed_at": {
+      "type": "string"
+    },
+    "cycle_status": {
+      "type": "string",
+      "enum": [
+        "Not started",
+        "Open",
+        "Completed",
+        "Incomplete \u2014 capacity limited",
+        "Blocked \u2014 usage limit"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "green",
+        "red",
+        "red"
+      ]
+    },
+    "cycle_due_sources": {
+      "type": "number"
+    },
+    "cycle_processed_sources": {
+      "type": "number"
+    },
+    "cycle_pending_publications": {
+      "type": "number"
+    },
+    "cycle_scope_note": {
+      "type": "string",
+      "description": "What the cycle actually retrieved and what remains outstanding"
+    },
+    "cycle_shortfall": {
+      "type": "string",
+      "description": "Stated capacity shortfall when the cycle could not cover every due source"
+    },
+    "classification_gate_status": {
+      "type": "string",
+      "enum": [
+        "Not run",
+        "Failing",
+        "Passing"
+      ],
+      "enumColors": [
+        "gray",
+        "red",
+        "green"
+      ],
+      "description": "Whether the classification regression set passes. Automated classification and notifications are held for a source template while this is not Passing."
+    },
+    "classification_gate_version": {
+      "type": "string"
+    },
+    "classification_gate_run_at": {
+      "type": "string"
+    },
+    "classification_gate_failures": {
+      "type": "number"
+    },
+    "classification_gate_note": {
+      "type": "string"
+    },
+    "classification_hold_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Source templates whose automated classification is currently held"
+    }
+  },
+  "required": [
+    "config_key"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
