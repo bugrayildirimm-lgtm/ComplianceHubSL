@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: hub
+      POSTGRES_USER: hub
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD}
+    volumes: [dbdata:/var/lib/postgresql/data]
+  app:
+    build: .
+    depends_on: [db]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://hub:${DB_PASSWORD}@db:5432/hub
+      STORAGE_DIR: /data/files
+    volumes: [files:/data/files]
+    ports: ["3000:3000"]
+volumes: { dbdata: {}, files: {} }

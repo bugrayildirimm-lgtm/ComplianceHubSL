@@ -1,0 +1,128 @@
+{
+  "name": "MarketPermissionDecision",
+  "type": "object",
+  "properties": {
+    "decision_ref": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "product_scope": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "Permitted",
+        "Conditionally permitted",
+        "Prohibited",
+        "Under review"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "red",
+        "yellow"
+      ]
+    },
+    "decision_basis": {
+      "type": "string",
+      "enum": [
+        "Legal analysis",
+        "Internal commercial policy",
+        "Licence condition",
+        "Pending analysis"
+      ],
+      "enumColors": [
+        "blue",
+        "gray",
+        "purple",
+        "yellow"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Pending approval",
+        "Approved",
+        "Superseded"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "green",
+        "gray"
+      ]
+    },
+    "drafter": {
+      "type": "string"
+    },
+    "designated_reviewer": {
+      "type": "string"
+    },
+    "decided_at": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "linked_alert_id": {
+      "type": "string"
+    },
+    "drafter_user_id": {
+      "type": "string"
+    },
+    "contributor_user_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_lock": {
+      "type": "string"
+    },
+    "approval_id": {
+      "type": "string"
+    },
+    "approved_snapshot_hash": {
+      "type": "string"
+    },
+    "approval_gate_version": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "jurisdiction_id",
+    "decision"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

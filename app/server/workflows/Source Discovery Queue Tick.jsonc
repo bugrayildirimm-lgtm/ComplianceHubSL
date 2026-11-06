@@ -1,0 +1,47 @@
+{
+  "name": "Source Discovery Queue Tick",
+  "description": "Resumable discovery across the register: each run researches the next small batch of jurisdictions, retrieves and tests every candidate publisher page itself, and leaves candidates awaiting human verification. Batch size comes from the monitoring configuration.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "source_discovery_queue_tick",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "discover_next_batch": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "runDiscoveryBatch",
+            "args": {
+              "trigger_type": "Workflow"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Research the next discovery batch",
+            "description": "A batch claims only a few jurisdictions; queued work resumes on the next tick and survives a pause"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "15 */3 * * *",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

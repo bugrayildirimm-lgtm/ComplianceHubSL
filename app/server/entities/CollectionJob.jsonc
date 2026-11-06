@@ -1,0 +1,115 @@
+{
+  "name": "CollectionJob",
+  "type": "object",
+  "properties": {
+    "job_key": {
+      "type": "string",
+      "description": "Prevents overlapping duplicate jobs"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_name": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Queued",
+        "Running",
+        "Succeeded",
+        "Failed or blocked",
+        "Partially processed",
+        "Skipped"
+      ],
+      "enumColors": [
+        "blue",
+        "blue",
+        "green",
+        "red",
+        "orange",
+        "gray"
+      ]
+    },
+    "trigger_type": {
+      "type": "string",
+      "description": "What the invocation claimed about its own trigger"
+    },
+    "trigger_evidence": {
+      "type": "string",
+      "description": "How the trigger was observed; no scheduler attestation is claimed"
+    },
+    "scope_note": {
+      "type": "string",
+      "description": "Exact source and document scope checked in this job"
+    },
+    "attempt": {
+      "type": "number"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "http_status": {
+      "type": "number"
+    },
+    "documents_found": {
+      "type": "number"
+    },
+    "documents_new": {
+      "type": "number"
+    },
+    "documents_changed": {
+      "type": "number"
+    },
+    "documents_unchanged": {
+      "type": "number"
+    },
+    "alerts_created": {
+      "type": "number"
+    },
+    "attachment_gaps": {
+      "type": "string"
+    },
+    "extraction_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "job_key",
+    "source_id"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

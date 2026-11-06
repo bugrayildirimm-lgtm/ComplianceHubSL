@@ -1,0 +1,49 @@
+{
+  "name": "Regulatory Monitoring Tick",
+  "description": "Bounded collection tick. A daily cycle (opened 06:00 Europe/Malta) drains every due verified source in small resumable batches; the same tick resumes queued publications and amendment rechecks until the cycle is complete or a stated capacity limit is reached.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "regulatory_monitoring_tick",
+      "version": "2.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "bounded_cycle_slice": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "collectManaged",
+            "args": {
+              "trigger": "scheduled",
+              "batch": "cycle",
+              "limit": 2
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Bounded collection slice",
+            "description": "Due sources, then queued publications and amendment rechecks"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "*/15 * * * *",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

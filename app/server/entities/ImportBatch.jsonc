@@ -1,0 +1,103 @@
+{
+  "name": "ImportBatch",
+  "type": "object",
+  "properties": {
+    "batch_ref": {
+      "type": "string"
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "sheet_name": {
+      "type": "string"
+    },
+    "source_period": {
+      "type": "string"
+    },
+    "row_count": {
+      "type": "number"
+    },
+    "valid_count": {
+      "type": "number"
+    },
+    "warning_count": {
+      "type": "number"
+    },
+    "duplicate_count": {
+      "type": "number"
+    },
+    "invalid_count": {
+      "type": "number"
+    },
+    "already_imported_count": {
+      "type": "number"
+    },
+    "promoted_count": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Preview",
+        "Partially promoted",
+        "Promoted",
+        "Superseded"
+      ],
+      "enumColors": [
+        "blue",
+        "yellow",
+        "green",
+        "gray"
+      ]
+    },
+    "imported_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "batch_ref"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

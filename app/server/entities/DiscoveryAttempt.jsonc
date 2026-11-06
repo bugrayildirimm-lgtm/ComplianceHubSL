@@ -1,0 +1,115 @@
+{
+  "name": "DiscoveryAttempt",
+  "type": "object",
+  "properties": {
+    "run_ref": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string",
+      "enum": [
+        "AI research proposal",
+        "Official starting point",
+        "Manual addition",
+        "Search-based discovery (unverified lead)"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "gray",
+        "teal"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "Retrieved and recorded as candidate",
+        "Retrieved \u2014 awaiting verification",
+        "Retrieval failed",
+        "Access blocked",
+        "Not accepted \u2014 not an official publisher",
+        "Search-based discovery \u2014 lead only"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "red",
+        "red",
+        "gray",
+        "yellow"
+      ]
+    },
+    "outcome_class": {
+      "type": "string",
+      "enum": [
+        "Source not yet found",
+        "Source found but retrieval blocked",
+        "Retrieved \u2014 extraction incomplete",
+        "Source awaiting verification",
+        "Confirmed non-public with evidence",
+        "Search-based discovery \u2014 unverified lead"
+      ],
+      "enumColors": [
+        "red",
+        "orange",
+        "yellow",
+        "blue",
+        "gray",
+        "purple"
+      ]
+    },
+    "http_status": {
+      "type": "number"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "attempted_at": {
+      "type": "string"
+    },
+    "attempted_by": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "reason_category": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "url",
+    "outcome"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

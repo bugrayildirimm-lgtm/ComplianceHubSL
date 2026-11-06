@@ -1,0 +1,45 @@
+{
+  "name": "Month-end Compliance Report",
+  "description": "On the 1st of each month the server builds the month-end report from recorded collection jobs, documents, review decisions, requirement changes and deadlines.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "month_end_compliance_report",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "generate_report": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "generateReport",
+            "args": {}
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Generate month-end report",
+            "description": "No repeat searching required"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 6 1 * *",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

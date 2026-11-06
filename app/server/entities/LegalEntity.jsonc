@@ -1,0 +1,94 @@
+{
+  "name": "LegalEntity",
+  "type": "object",
+  "properties": {
+    "entity_code": {
+      "type": "string"
+    },
+    "entity_name": {
+      "type": "string"
+    },
+    "jurisdiction_of_incorporation": {
+      "type": "string"
+    },
+    "entity_role": {
+      "type": "string",
+      "enum": [
+        "Licence holder",
+        "Game supplier",
+        "Studio operator",
+        "Group or support",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "purple",
+        "gray",
+        "gray"
+      ]
+    },
+    "licence_holder": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Dormant",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "gray",
+        "gray"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "entity_name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

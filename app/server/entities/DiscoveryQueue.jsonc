@@ -1,0 +1,115 @@
+{
+  "name": "DiscoveryQueue",
+  "type": "object",
+  "properties": {
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "internal_classification": {
+      "type": "string"
+    },
+    "territory_scope": {
+      "type": "string"
+    },
+    "priority_rank": {
+      "type": "number",
+      "description": "1 licensed, 2 conditional, 3 prospective, 4 prohibited"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Not started",
+        "Queued",
+        "Researching",
+        "Candidates proposed",
+        "Coverage partial",
+        "Verified sources available",
+        "Blocked \u2014 ambiguous register record",
+        "Blocked \u2014 retrieval failed",
+        "Blocked \u2014 budget or usage limit"
+      ],
+      "enumColors": [
+        "gray",
+        "blue",
+        "yellow",
+        "blue",
+        "orange",
+        "green",
+        "red",
+        "red",
+        "red"
+      ]
+    },
+    "attempts": {
+      "type": "number"
+    },
+    "candidates_found": {
+      "type": "number"
+    },
+    "candidates_tested_ok": {
+      "type": "number"
+    },
+    "verified_sources": {
+      "type": "number"
+    },
+    "topics_targeted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "topics_covered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_gaps": {
+      "type": "string"
+    },
+    "last_run_id": {
+      "type": "string"
+    },
+    "last_run_at": {
+      "type": "string"
+    },
+    "next_attempt_at": {
+      "type": "string"
+    },
+    "block_reason": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "jurisdiction_id",
+    "jurisdiction_name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

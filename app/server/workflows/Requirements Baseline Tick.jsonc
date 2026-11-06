@@ -1,0 +1,48 @@
+{
+  "name": "Requirements Baseline Tick",
+  "description": "Weekly maintenance of previously researched cells. Initial backlog processing is separate and runs frequently without waiting for human source or requirement review.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "requirements_baseline_tick",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "research_next_cells": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "runRequirementResearch",
+            "args": {
+              "trigger_type": "Workflow",
+              "mode": "maintenance"
+            }
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Research the next baseline cells",
+            "description": "Drafts remain candidates until an authorised reviewer approves them"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "30 6 * * 1",
+      "one_time_date": null,
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

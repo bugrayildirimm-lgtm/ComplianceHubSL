@@ -1,0 +1,108 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "access_admitted": {
+      "type": "boolean",
+      "description": "Server-written admission mirror used by native entity read RLS. Direct reads do not re-read the roster. Backend resolveActor and admitUser do; open-session mirror propagation requires ordinary-user acceptance.",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "admission_role": {
+      "type": "string",
+      "description": "Mirror of the roster access role at last admission check",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "compliance_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "compliance_teams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "approval_authority": {
+      "type": "boolean",
+      "description": "Only true when the roster records confirmed, second-person approval authority",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "audit_access": {
+      "type": "boolean",
+      "description": "Whether this account may read the audit trail",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "team_member_id": {
+      "type": "string",
+      "description": "Roster record backing this admission",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "admission_checked_at": {
+      "type": "string",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    },
+    "admission_reason": {
+      "type": "string",
+      "description": "Server-written reason for the last admission decision",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "collaborator_role": "editor"
+          }
+        }
+      }
+    }
+  }
+}

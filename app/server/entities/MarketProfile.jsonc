@@ -1,0 +1,103 @@
+{
+  "name": "MarketProfile",
+  "type": "object",
+  "properties": {
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "legal_entity_name": {
+      "type": "string"
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "Slot",
+        "Live Casino Game",
+        "Live Studio Operation"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "green"
+      ]
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "permission_status": {
+      "type": "string",
+      "enum": [
+        "Licensed",
+        "Conditionally permitted",
+        "Internal prohibition",
+        "Unknown",
+        "Under review"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "red",
+        "gray",
+        "yellow"
+      ]
+    },
+    "certificate_activity_confirmed": {
+      "type": "boolean"
+    },
+    "basis_notes": {
+      "type": "string"
+    },
+    "owner_team": {
+      "type": "string"
+    },
+    "owner_status": {
+      "type": "string",
+      "enum": [
+        "Assigned",
+        "Ownership review"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ]
+    },
+    "decision_id": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "jurisdiction_id",
+    "product_type"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

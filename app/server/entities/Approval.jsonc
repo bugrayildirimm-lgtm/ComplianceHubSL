@@ -1,0 +1,143 @@
+{
+  "name": "Approval",
+  "type": "object",
+  "properties": {
+    "approval_ref": {
+      "type": "string"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": [
+        "Requirement",
+        "Requirement amendment",
+        "Market permission decision",
+        "Source verification batch",
+        "Import promotion"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "red",
+        "blue",
+        "gray"
+      ]
+    },
+    "item_id": {
+      "type": "string"
+    },
+    "item_title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "drafter": {
+      "type": "string"
+    },
+    "designated_reviewer": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Returned for changes"
+      ],
+      "enumColors": [
+        "yellow",
+        "green",
+        "red",
+        "yellow"
+      ]
+    },
+    "decision_reason": {
+      "type": "string"
+    },
+    "decided_by": {
+      "type": "string"
+    },
+    "decided_at": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "evidence_checked": {
+      "type": "boolean"
+    },
+    "requested_by_user_id": {
+      "type": "string"
+    },
+    "drafter_user_id": {
+      "type": "string"
+    },
+    "contributor_user_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "designated_reviewer_user_id": {
+      "type": "string"
+    },
+    "snapshot_json": {
+      "type": "string"
+    },
+    "snapshot_hash": {
+      "type": "string"
+    },
+    "version_number": {
+      "type": "number"
+    },
+    "item_lock": {
+      "type": "string"
+    },
+    "execution_state": {
+      "type": "string"
+    },
+    "operation_token": {
+      "type": "string"
+    },
+    "audit_event_id": {
+      "type": "string"
+    },
+    "version_id": {
+      "type": "string"
+    },
+    "approval_gate_version": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "approval_ref",
+    "item_type",
+    "item_id"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

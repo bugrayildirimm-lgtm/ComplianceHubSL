@@ -1,0 +1,340 @@
+{
+  "name": "Requirement",
+  "type": "object",
+  "properties": {
+    "requirement_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "jurisdiction_id": {
+      "type": "string"
+    },
+    "jurisdiction_name": {
+      "type": "string"
+    },
+    "territorial_scope": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "A. Market Entry & Legal",
+        "B. Slots Technical",
+        "C. Live Casino Game Technical",
+        "D. Live Studio & Operational"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "purple",
+        "green"
+      ]
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "Slot",
+        "Live Casino Game",
+        "Live Studio Operation",
+        "All products",
+        "Unknown"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "green",
+        "gray",
+        "gray"
+      ]
+    },
+    "legal_entity_name": {
+      "type": "string"
+    },
+    "studio_name": {
+      "type": "string"
+    },
+    "regulated_party": {
+      "type": "string",
+      "enum": [
+        "Supplier",
+        "Operator",
+        "Studio",
+        "Other",
+        "Unknown"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "green",
+        "gray",
+        "gray"
+      ]
+    },
+    "authority": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    },
+    "article_reference": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source_version": {
+      "type": "string"
+    },
+    "source_excerpt": {
+      "type": "string",
+      "description": "Official wording, verbatim"
+    },
+    "language": {
+      "type": "string"
+    },
+    "english_translation": {
+      "type": "string"
+    },
+    "translation_uncertainty": {
+      "type": "boolean"
+    },
+    "obligation_type": {
+      "type": "string",
+      "enum": [
+        "Binding requirement",
+        "Official guidance",
+        "Internal or contractual",
+        "Unknown"
+      ],
+      "enumColors": [
+        "red",
+        "yellow",
+        "gray",
+        "gray"
+      ]
+    },
+    "legal_status": {
+      "type": "string",
+      "enum": [
+        "In force",
+        "Adopted not yet effective",
+        "Proposed",
+        "Guidance",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "blue",
+        "purple",
+        "gray"
+      ]
+    },
+    "publication_date": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string"
+    },
+    "future_effective_date": {
+      "type": "string"
+    },
+    "internal_interpretation": {
+      "type": "string"
+    },
+    "applicability_rationale": {
+      "type": "string"
+    },
+    "operator_obligation": {
+      "type": "boolean"
+    },
+    "supplier_support_obligation": {
+      "type": "boolean"
+    },
+    "support_basis": {
+      "type": "string"
+    },
+    "responsible_team": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": [
+        "Candidate \u2014 unreviewed",
+        "In review",
+        "Approved",
+        "Rejected",
+        "Superseded"
+      ],
+      "enumColors": [
+        "yellow",
+        "blue",
+        "green",
+        "red",
+        "gray"
+      ]
+    },
+    "applicability_status": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "Applicable",
+        "Not applicable",
+        "Under review"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "blue",
+        "yellow"
+      ]
+    },
+    "implementation_status": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "Gap identified",
+        "Action assigned",
+        "Evidence submitted",
+        "Implemented",
+        "Not applicable"
+      ],
+      "enumColors": [
+        "gray",
+        "red",
+        "yellow",
+        "blue",
+        "green",
+        "gray"
+      ]
+    },
+    "compliance_assessment": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approval_date": {
+      "type": "string"
+    },
+    "current_version": {
+      "type": "number"
+    },
+    "supersedes_requirement_id": {
+      "type": "string"
+    },
+    "next_review_date": {
+      "type": "string"
+    },
+    "ai_generated": {
+      "type": "boolean"
+    },
+    "linked_alert_id": {
+      "type": "string"
+    },
+    "is_fixture": {
+      "type": "boolean"
+    },
+    "drafter_user_id": {
+      "type": "string"
+    },
+    "drafter_email": {
+      "type": "string"
+    },
+    "contributor_user_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_revision": {
+      "type": "number"
+    },
+    "approval_lock": {
+      "type": "string"
+    },
+    "approval_id": {
+      "type": "string"
+    },
+    "approved_version_id": {
+      "type": "string"
+    },
+    "approved_snapshot_hash": {
+      "type": "string"
+    },
+    "approval_gate_version": {
+      "type": "number"
+    },
+    "quarantined": {
+      "type": "boolean"
+    },
+    "quarantine_reason": {
+      "type": "string"
+    },
+    "research_key": {
+      "type": "string"
+    },
+    "baseline_cell_id": {
+      "type": "string"
+    },
+    "research_run_id": {
+      "type": "string"
+    },
+    "source_record_id": {
+      "type": "string"
+    },
+    "source_verification_status": {
+      "type": "string"
+    },
+    "source_content_hash": {
+      "type": "string"
+    },
+    "extraction_uncertainty": {
+      "type": "boolean"
+    },
+    "evidence_document_id": {
+      "type": "string"
+    },
+    "missing_applicability_facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "requirement_id",
+    "title",
+    "category"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}

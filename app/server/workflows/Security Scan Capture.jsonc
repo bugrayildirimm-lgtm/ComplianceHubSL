@@ -1,0 +1,144 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "one_time",
+      "cron_expression": null,
+      "one_time_date": "2026-11-04T14:46:00Z",
+      "timezone": "Europe/Malta",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Security Scan Capture",
+  "description": "One-time, isolated capture of a current app security scan. Starts the scan, waits the documented duration, then reads results matched to this request by requested_at. It changes no records, roles, approval authority or workflow state, and touches no publisher collection.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "security_scan_capture",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "start_scan": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "start"
+          },
+          "then": "route_start",
+          "x-base44": {
+            "title": "Start security scan",
+            "description": "Returns at once, no findings"
+          }
+        }
+      },
+      {
+        "route_start": {
+          "switch": [
+            {
+              "when": "${ .start_scan.state == \"ready\" }",
+              "then": "read_current"
+            },
+            {
+              "when": "${ true }",
+              "then": "wait_ten"
+            }
+          ],
+          "x-base44": {
+            "title": "Scan already current?",
+            "description": "Cached up-to-date scan is read directly"
+          }
+        }
+      },
+      {
+        "read_current": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "results",
+            "max_findings": 100
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Read current scan",
+            "description": "Latest completed scan, up to 100 findings"
+          }
+        }
+      },
+      {
+        "wait_ten": {
+          "wait": "PT10M",
+          "then": "read_after_wait",
+          "x-base44": {
+            "title": "Wait for scan",
+            "description": "Documented scanning window"
+          }
+        }
+      },
+      {
+        "read_after_wait": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "results",
+            "after": "${ .start_scan.requested_at }",
+            "max_findings": 100
+          },
+          "then": "route_after_wait",
+          "x-base44": {
+            "title": "Read results for this request",
+            "description": "Matched by requested_at, not a stale scan"
+          }
+        }
+      },
+      {
+        "route_after_wait": {
+          "switch": [
+            {
+              "when": "${ .read_after_wait.state == \"running\" }",
+              "then": "wait_five"
+            },
+            {
+              "when": "${ true }",
+              "then": "end"
+            }
+          ],
+          "x-base44": {
+            "title": "Still scanning?",
+            "description": "One bounded extra read only"
+          }
+        }
+      },
+      {
+        "wait_five": {
+          "wait": "PT5M",
+          "then": "read_final",
+          "x-base44": {
+            "title": "Second bounded wait",
+            "description": "Five minutes"
+          }
+        }
+      },
+      {
+        "read_final": {
+          "call": "app_security_scan",
+          "with": {
+            "action": "results",
+            "after": "${ .start_scan.requested_at }",
+            "max_findings": 100
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Final results read",
+            "description": "No further retries"
+          }
+        }
+      }
+    ]
+  }
+}

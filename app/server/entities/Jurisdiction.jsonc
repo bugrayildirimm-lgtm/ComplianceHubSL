@@ -1,0 +1,222 @@
+{
+  "name": "Jurisdiction",
+  "type": "object",
+  "properties": {
+    "jurisdiction_id": {
+      "type": "string",
+      "description": "Stable master ID, e.g. JUR-0001"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "name_raw": {
+      "type": "string",
+      "description": "Original name exactly as imported"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "territory_scope": {
+      "type": "string",
+      "enum": [
+        "Country",
+        "Subnational state or province",
+        "Aggregate or region",
+        "Territory",
+        "Unconfirmed"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "yellow",
+        "gray",
+        "red"
+      ]
+    },
+    "parent_jurisdiction": {
+      "type": "string",
+      "description": "Parent country for subnational scopes"
+    },
+    "internal_classification": {
+      "type": "string",
+      "enum": [
+        "Licensed Jurisdiction",
+        "Conditionally Permitted",
+        "Prohibited Territory",
+        "Not on RTL / Under Consideration",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "red",
+        "yellow",
+        "gray"
+      ]
+    },
+    "classification_basis": {
+      "type": "string",
+      "description": "Where the classification came from"
+    },
+    "legal_verification_status": {
+      "type": "string",
+      "enum": [
+        "Not verified",
+        "Verified",
+        "Uncertain",
+        "Clarification required"
+      ],
+      "enumColors": [
+        "gray",
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "product_scope_status": {
+      "type": "string",
+      "enum": [
+        "Not established",
+        "Partially established",
+        "Established"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "green"
+      ]
+    },
+    "primary_owner_team": {
+      "type": "string",
+      "enum": [
+        "Regulatory Compliance",
+        "Technical Compliance",
+        "Unassigned"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "red"
+      ]
+    },
+    "primary_owner_user": {
+      "type": "string"
+    },
+    "collaborating_teams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ownership_status": {
+      "type": "string",
+      "enum": [
+        "Assigned",
+        "Ownership review",
+        "Pending confirmation"
+      ],
+      "enumColors": [
+        "green",
+        "red",
+        "yellow"
+      ]
+    },
+    "certificate_activity_confirmed": {
+      "type": "boolean"
+    },
+    "review_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "duplicate_group": {
+      "type": "string"
+    },
+    "possible_duplicate_of": {
+      "type": "string"
+    },
+    "import_row_key": {
+      "type": "string",
+      "description": "Import row that created this record"
+    },
+    "source_row": {
+      "type": "string"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "source_period": {
+      "type": "string"
+    },
+    "monitoring_status": {
+      "type": "string",
+      "enum": [
+        "No sources configured",
+        "Sources awaiting verification",
+        "Partially monitored",
+        "Monitored"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "blue",
+        "green"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "review_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "jurisdiction_id",
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

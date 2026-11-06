@@ -1,0 +1,22 @@
+{
+  "name": "compliance-hub-server",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node --import ./server/register.js server/index.js",
+    "test": "node --import ./server/register.js --test server/test/*.test.js",
+    "load-data": "node --import ./server/register.js scripts/load-csv.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.15",
+    "croner": "^11.0.0",
+    "csv-parse": "^7.0.3",
+    "express": "^5.3.0",
+    "jsonc-parser": "^3.3.1",
+    "nodemailer": "^10.3.1",
+    "pg": "^8.23.1"
+  }
+}

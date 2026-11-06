@@ -1,0 +1,93 @@
+{
+  "name": "GameProduct",
+  "type": "object",
+  "properties": {
+    "product_code": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "Slot",
+        "Live Casino Game",
+        "Live Studio Operation"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "teal"
+      ]
+    },
+    "studio": {
+      "type": "string"
+    },
+    "supplier_entity": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Live",
+        "In development",
+        "Retired",
+        "Unknown"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "gray",
+        "gray"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "product_name",
+    "product_type"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "data.access_admitted": true
+      }
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

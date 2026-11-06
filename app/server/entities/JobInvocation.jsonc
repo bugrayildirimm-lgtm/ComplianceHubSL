@@ -1,0 +1,102 @@
+{
+  "name": "JobInvocation",
+  "type": "object",
+  "properties": {
+    "run_ref": {
+      "type": "string"
+    },
+    "job_name": {
+      "type": "string"
+    },
+    "invoking_user_id": {
+      "type": "string"
+    },
+    "invoking_user_email": {
+      "type": "string"
+    },
+    "invoking_app_role": {
+      "type": "string"
+    },
+    "invoking_collaborator_role": {
+      "type": "string"
+    },
+    "authorization_result": {
+      "type": "string",
+      "enum": [
+        "Authorised job runner",
+        "Rejected \u2014 not the designated job runner",
+        "Rejected \u2014 designation inactive",
+        "Rejected \u2014 not an app-admin identity"
+      ],
+      "enumColors": [
+        "green",
+        "red",
+        "red",
+        "red"
+      ]
+    },
+    "authorization_detail": {
+      "type": "string"
+    },
+    "trigger_context": {
+      "type": "string",
+      "description": "What the request itself revealed about its trigger; never a scheduler attestation"
+    },
+    "network_requests": {
+      "type": "number",
+      "description": "Outbound network requests made by this job; must be 0 for the invocation test"
+    },
+    "observed_scope_json": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Completed",
+        "Rejected"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "run_ref",
+    "job_name",
+    "invoking_user_id",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "collaborator_role": "editor"
+      }
+    }
+  }
+}
