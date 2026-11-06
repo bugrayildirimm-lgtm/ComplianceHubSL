@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node --import ./server/register.js server/index.js",
     "test": "node --import ./server/register.js --test server/test/*.test.js",
-    "load-data": "node --import ./server/register.js scripts/load-csv.js"
+    "load-data": "node --import ./server/register.js scripts/load-csv.js",
+    "local": "node scripts/local.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.15",

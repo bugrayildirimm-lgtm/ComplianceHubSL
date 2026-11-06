@@ -2,7 +2,16 @@
 
 Node 22 server (`server/`) and React frontend (`web/`). Behaviour is the Base44 app's, ported (see `../docs/spec.md`).
 
-## Run locally (embedded database, no Docker)
+## Quick start (any computer)
+
+1. Install [Node.js 22.18 or newer](https://nodejs.org) and Git.
+2. `git clone https://github.com/bugrayildirimm-lgtm/ComplianceHubSL` and `cd ComplianceHubSL/app`
+3. `npm run local`
+
+First run asks for an administrator email and password, builds everything, loads the data snapshot and starts the
+server at http://localhost:3000. Later runs just start it. Local runs never collect from regulator sites.
+
+## Run locally, step by step (embedded database, no Docker)
 
 ```bash
 cd app && npm install && (cd web && npm install && npx vite build)
