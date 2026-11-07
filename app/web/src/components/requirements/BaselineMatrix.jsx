@@ -40,15 +40,17 @@ export default function BaselineMatrix() {
 
   const load = useCallback(async () => {
     const [cPage, rPage, totals, draftCount] = await Promise.all([
-      base44.entities.RequirementBaseline.filter(category ? { category } : {}, { sort: 'jurisdiction_id', limit: 40, cursor: cursor || undefined }),
+      base44.entities.RequirementBaseline.filter(category ? { category } : {}, { sort: 'jurisdiction_id', limit: 40, skip: Number(cursor) || 0 }),
       base44.entities.DiscoveryRun.filter({ run_kind: 'Requirements baseline research' }, { sort: '-created_date', limit: 30 }),
       base44.entities.RequirementBaseline.aggregate({ groupBy: 'status' }),
       base44.entities.Requirement.count({ ai_generated: true, is_fixture: { $ne: true } }),
     ]);
-    setCells(cPage.items || []);
-    setNextCursor(cPage.has_more ? cPage.next_cursor : '');
-    setRuns(rPage.items || []);
-    setCounts(Object.fromEntries(totals.rows.map(r => [r.status, r.count])));
+    // The portable server returns plain arrays; the cursor is a skip offset.
+    const cellList = Array.isArray(cPage) ? cPage : (cPage.items || []);
+    setCells(cellList);
+    setNextCursor(cellList.length === 40 ? String((Number(cursor) || 0) + 40) : '');
+    setRuns(Array.isArray(rPage) ? rPage : (rPage.items || []));
+    setCounts(Object.fromEntries((Array.isArray(totals) ? totals : totals.rows || []).map(r => [r.status, r.count])));
     setDraftsTotal(draftCount);
     setLoading(false);
   }, [category, cursor]);

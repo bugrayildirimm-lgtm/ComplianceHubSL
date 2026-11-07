@@ -18,16 +18,27 @@ async function request(method, path, body) {
   return data;
 }
 
+// Pages call list/filter either positionally (sort, limit, skip) or with an options object ({ sort, limit, skip }).
+const listArgs = (sort, limit, skip) => (sort && typeof sort === 'object' && !Array.isArray(sort)
+  ? { sort: sort.sort, limit: sort.limit ?? limit, skip: sort.skip ?? skip }
+  : { sort, limit, skip });
+
+// Results are arrays that also expose { items, rows, has_more, next_cursor }, because some pages expect paged shapes.
+const asPage = (rows) => {
+  if (Array.isArray(rows)) { rows.items = rows; rows.rows = rows; rows.has_more = false; rows.next_cursor = ''; }
+  return rows;
+};
+
 const entity = (name) => ({
-  list: (sort, limit, skip) => request('POST', `/entities/${name}/query`, { query: {}, sort, limit, skip }),
-  filter: (query, sort, limit, skip) => request('POST', `/entities/${name}/query`, { query, sort, limit, skip }),
+  list: async (sort, limit, skip) => asPage(await request('POST', `/entities/${name}/query`, { query: {}, ...listArgs(sort, limit, skip) })),
+  filter: async (query, sort, limit, skip) => asPage(await request('POST', `/entities/${name}/query`, { query, ...listArgs(sort, limit, skip) })),
   get: (id) => request('GET', `/entities/${name}/${id}`),
   create: (data) => request('POST', `/entities/${name}`, data),
   bulkCreate: (items) => request('POST', `/entities/${name}/bulk`, items),
   update: (id, data) => request('PUT', `/entities/${name}/${id}`, data),
   delete: (id) => request('DELETE', `/entities/${name}/${id}`),
   count: async (query) => (await request('POST', `/entities/${name}/count`, { query })).count,
-  aggregate: (spec) => request('POST', `/entities/${name}/aggregate`, spec),
+  aggregate: async (spec) => asPage(await request('POST', `/entities/${name}/aggregate`, spec)),
 });
 
 export const base44 = {

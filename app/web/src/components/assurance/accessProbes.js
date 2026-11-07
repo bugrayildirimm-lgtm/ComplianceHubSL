@@ -19,7 +19,8 @@ const readOne = (entity, id) => async () => {
 };
 const readPage = (entity, id) => async () => {
   const page = await entity.filter({ id }, { limit: 1 });
-  return { returned_ids: page.items.map(r => r.id), has_more: page.has_more };
+  const rows = Array.isArray(page) ? page : (page.items || []);
+  return { returned_ids: rows.map(r => r.id), has_more: Array.isArray(page) ? false : page.has_more };
 };
 // All probes use the browser's ordinary app-user token on native SDK routes.
 // There is no service-role read surrogate here, no arbitrary entity selector,

@@ -49,6 +49,7 @@ if (!fs.existsSync('.env')) {
 }
 
 const env = { ...process.env };
+delete env.DATABASE_URL; // local runs use the embedded database; ignore any DATABASE_URL left in the shell (.env can still set it)
 for (const line of fs.readFileSync('.env', 'utf8').split(/\r?\n/)) {
   const m = line.match(/^([A-Z0-9_]+)=(.*)$/);
   if (m && m[2] !== '') env[m[1]] = m[2];

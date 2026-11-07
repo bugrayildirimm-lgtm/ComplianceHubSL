@@ -3,3 +3,4 @@ dist/
 .env
 app/data/
 *.log
+.vscode/
