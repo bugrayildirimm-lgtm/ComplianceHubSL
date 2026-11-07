@@ -54,3 +54,25 @@ test('injection attempts in field names are rejected, values are parameterised',
   await S.create({ title: "it's \"quoted\"; DROP TABLE" });
   assert.equal((await S.filter({ title: "it's \"quoted\"; DROP TABLE" })).length, 1);
 });
+
+test('list/filter accept positional or options-object arguments and expose page fields', async () => {
+  const S = entityStore('Report');
+  await S.bulkCreate(Array.from({ length: 7 }, (_, i) => ({ title: `r${i}`, n: i })));
+  const a = await S.filter({}, 'n', 3);                    // positional
+  const b = await S.filter({}, { sort: 'n', limit: 3 });   // options object
+  assert.deepEqual(a.map((d) => d.n), [0, 1, 2]);
+  assert.deepEqual(b.map((d) => d.n), [0, 1, 2]);
+  assert.equal(b.items[0].n, 0);                           // functions read page.items
+  assert.equal(b.has_more, true);
+  assert.deepEqual((await S.list({ sort: '-n', limit: 2 })).map((d) => d.n), [6, 5]);
+  assert.equal(JSON.stringify(b).startsWith('['), true);   // still serialises as a plain array
+  // cursor walk covers every row exactly once, and ends with has_more false
+  const seen = []; let cursor; let pages = 0;
+  do {
+    const page = await S.filter({}, { sort: 'n', limit: 3, ...(cursor ? { cursor } : {}) });
+    seen.push(...page.map((d) => d.n)); cursor = page.has_more ? page.next_cursor : undefined; pages++;
+  } while (cursor);
+  assert.deepEqual(seen, [0, 1, 2, 3, 4, 5, 6]); assert.equal(pages, 3);
+  const last = await S.filter({}, { limit: 100 });
+  assert.equal(last.has_more, false); assert.equal(last.next_cursor, '');
+});

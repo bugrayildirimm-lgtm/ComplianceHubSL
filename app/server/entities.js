@@ -143,6 +143,31 @@ function splitInput(input) {
   return { id, created_date, updated_date, created_by: created_by || created_by_id, data };
 }
 
+
+// The Base44 SDK accepts both positional (sort, limit, skip) and options-object ({ sort, limit, skip, cursor })
+// arguments, and the ported functions use both. Results are arrays that also expose
+// { items, rows, has_more, next_cursor } (non-enumerable), as the functions read `page.items`.
+const encodeCursor = (offset) => Buffer.from(JSON.stringify({ o: offset })).toString('base64url');
+function decodeCursor(cursor) {
+  try { const o = JSON.parse(Buffer.from(String(cursor), 'base64url').toString('utf8')).o; return Number.isInteger(o) && o >= 0 ? o : 0; }
+  catch { return 0; }
+}
+function normaliseArgs(a, limit, skip) {
+  if (a && typeof a === 'object' && !Array.isArray(a)) {
+    const offset = a.cursor ? decodeCursor(a.cursor) : (a.skip ?? skip ?? 0);
+    return { sort: a.sort, limit: a.limit ?? limit, skip: offset };
+  }
+  return { sort: a, limit, skip: skip ?? 0 };
+}
+function asPage(rows, { hasMore = false, nextCursor = '' } = {}) {
+  // items/rows are hidden (functions overwrite `items` when they spread a page into a response);
+  // has_more/next_cursor stay enumerable so `{ ...page }` carries paging state like the Base44 page object did.
+  for (const [k, v] of Object.entries({ items: rows, rows })) Object.defineProperty(rows, k, { value: v, enumerable: false, configurable: true });
+  rows.has_more = hasMore;
+  rows.next_cursor = nextCursor;
+  return rows;
+}
+
 export function entityStore(name, actor = null) {
   if (!loadRegistry()[name]) throw Object.assign(new Error(`Entity ${name} not found`), { status: 404 });
   const T = table(name);
@@ -180,6 +205,15 @@ export function entityStore(name, actor = null) {
     return rows.map(toDoc);
   };
 
+  const selectPage = async (query, args, limitArg, skipArg) => {
+    const { sort, limit, skip } = normaliseArgs(args, limitArg, skipArg);
+    const n = limit ? Math.max(0, Number(limit) | 0) : 0;
+    const rows = await select(query, sort, n ? n + 1 : undefined, skip);
+    const hasMore = n > 0 && rows.length > n;
+    if (hasMore) rows.length = n;
+    return asPage(rows, { hasMore, nextCursor: hasMore ? encodeCursor((Number(skip) || 0) + n) : '' });
+  };
+
   const insert = async (input) => {
     const db = await getDb();
     const { id, created_date, updated_date, created_by, data } = splitInput(input);
@@ -193,8 +227,8 @@ export function entityStore(name, actor = null) {
   };
 
   return {
-    list: (sort, limit, skip) => select({}, sort, limit, skip),
-    filter: (query, sort, limit, skip) => select(query, sort, limit, skip),
+    list: (sort, limit, skip) => selectPage({}, sort, limit, skip),
+    filter: (query, sort, limit, skip) => selectPage(query, sort, limit, skip),
     async get(id) {
       const rows = await select({ id }, null, 1);
       if (!rows[0]) throw Object.assign(new Error(`${name} ${id} not found`), { status: 404 });
