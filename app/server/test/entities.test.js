@@ -92,3 +92,16 @@ test('$ne and $nin match documents where the field is missing (Mongo/Base44 sema
   assert.deepEqual(await names({ tags: { $ne: 'a' } }), ['flag-false', 'flag-true', 'no-flag']);
   assert.equal(await S.count({ is_fixture: { $ne: true } }), 3);
 });
+
+test('updateMany returns { updated } and honours the updated_date optimistic lock the functions use', async () => {
+  const M = entityStore('MonitoringConfig');
+  const row = await M.create({ config_key: 'lock-test', credits_used_estimate: 0 });
+  const first = await M.updateMany({ id: row.id, updated_date: row.updated_date }, { $inc: { credits_used_estimate: 2 }, $set: { note: 'x' } });
+  assert.equal(first.updated, 1);
+  // same (now stale) updated_date must lose: that is how concurrent writers are rejected
+  const stale = await M.updateMany({ id: row.id, updated_date: row.updated_date }, { $inc: { credits_used_estimate: 2 } });
+  assert.equal(stale.updated, 0);
+  const fresh = await M.get(row.id);
+  assert.equal(fresh.credits_used_estimate, 2); assert.equal(fresh.note, 'x');
+  assert.equal((await M.updateMany({ id: fresh.id, updated_date: fresh.updated_date }, { $set: { note: 'y' } })).updated, 1);
+});

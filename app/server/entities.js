@@ -246,7 +246,8 @@ export function entityStore(name, actor = null) {
     // (approvals rely on this for replay protection). Returns { modified_count }.
     async updateMany(query, update) {
       const rows = await atomicUpdate(query, update);
-      return { modified_count: rows.length };
+      // Base44 returns { updated }; keep modified_count as an alias. Functions check `result.updated === 1`.
+      return { updated: rows.length, modified_count: rows.length, matched_count: rows.length };
     },
     async bulkUpdate(items) { const out = []; for (const { id, data, ...rest } of items) out.push(await this.update(id, data || rest)); return out; },
     async delete(id) { const db = await getDb(); await db.query(`DELETE FROM ${T} WHERE id = $1`, [id]); return { success: true }; },
