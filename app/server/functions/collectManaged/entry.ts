@@ -940,7 +940,11 @@ export default async function (req) {
             throw new Error(`Listing page not retrievable: HTTP ${listing.httpStatus || 'unknown'}${listing.navigationError ? ` (${shortText(listing.navigationError, 120)})` : ''}`);
           }
 
-          const listingEvidence = await retainCapturedText(base44, {
+          // Store the full text when the record is new, changed, or an unchanged recheck of a record that has no
+          // retained text yet (a storage correction). An unchanged recheck of a record that already links its
+          // evidence stores nothing, so no orphan file is left behind.
+          const listingNeedsStore = !priorListing || listingComparison !== 'Unchanged' || !priorListing.evidence_file_uri;
+          const listingEvidence = !listingNeedsStore ? {} : await retainCapturedText(base44, {
             text: listing.text,
             documentRef: `DOC-${crypto.randomUUID().slice(0, 8).toUpperCase()}`,
             url: listingUrl,
@@ -1020,7 +1024,16 @@ export default async function (req) {
             priorDocs.set(listingUrl, created);
             documentsChanged += 1;
           } else {
-            await base44.asServiceRole.entities.DocumentRecord.update(priorListing.id, { last_rechecked_at: listing.capturedAt });
+            const unchangedPatch = { last_rechecked_at: listing.capturedAt };
+            if (!priorListing.evidence_file_uri) {
+              // Storage correction, never an amendment: the comparable text is identical, so attaching the full
+              // captured text changes no hash, no version and no alert.
+              Object.assign(unchangedPatch, listingEvidence, {
+                evidence_storage_note: `${listingEvidence.evidence_storage_note || ''} Attached to the existing capture ${priorListing.document_ref || ''} as an extraction/storage correction: the substantive text is identical to the stored comparison, so this is not a publication change.`.trim(),
+              });
+              scopeLines.push(`full capture text retained on the existing record (${listingEvidence.captured_chars} characters, ${listingEvidence.evidence_file_uri ? 'saved' : 'storage incomplete'}) as a storage correction, not an amendment`);
+            }
+            await base44.asServiceRole.entities.DocumentRecord.update(priorListing.id, unchangedPatch);
             documentsUnchanged += 1;
           }
 
