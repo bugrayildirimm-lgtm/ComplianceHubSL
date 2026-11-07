@@ -73,9 +73,10 @@ function eqClause(b, f, value) {
 function opClause(b, f, op, arg, options) {
   switch (op) {
     case '$eq': return eqClause(b, f, arg);
-    case '$ne': return `NOT ${eqClause(b, f, arg)}`;
+    // Mongo semantics: a missing/null field is "not equal" to a value, so NULL must count as false before negating
+    case '$ne': return `NOT COALESCE(${eqClause(b, f, arg)}, FALSE)`;
     case '$in': return arg.length ? `(${arg.map((v) => eqClause(b, f, v)).join(' OR ')})` : 'FALSE';
-    case '$nin': return arg.length ? `NOT (${arg.map((v) => eqClause(b, f, v)).join(' OR ')})` : 'TRUE';
+    case '$nin': return arg.length ? `NOT COALESCE((${arg.map((v) => eqClause(b, f, v)).join(' OR ')}), FALSE)` : 'TRUE';
     case '$gt': return `(${f.json} > ${b.json(arg)})`;
     case '$gte': return `(${f.json} >= ${b.json(arg)})`;
     case '$lt': return `(${f.json} < ${b.json(arg)})`;

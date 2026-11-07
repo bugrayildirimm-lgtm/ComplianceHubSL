@@ -4,3 +4,4 @@ dist/
 app/data/
 *.log
 .vscode/
+app/data-*/

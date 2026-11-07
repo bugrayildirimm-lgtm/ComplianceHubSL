@@ -76,3 +76,19 @@ test('list/filter accept positional or options-object arguments and expose page 
   const last = await S.filter({}, { limit: 100 });
   assert.equal(last.has_more, false); assert.equal(last.next_cursor, '');
 });
+
+test('$ne and $nin match documents where the field is missing (Mongo/Base44 semantics)', async () => {
+  const S = entityStore('DiscoveryQueue');
+  await S.bulkCreate([
+    { name: 'no-flag' },                      // field missing: the real Source rows look like this
+    { name: 'flag-false', is_fixture: false },
+    { name: 'flag-true', is_fixture: true },
+    { name: 'tagged', tags: ['a', 'b'] },
+  ]);
+  const names = async (q) => (await S.filter(q, 'name')).map((d) => d.name);
+  assert.deepEqual(await names({ is_fixture: { $ne: true } }), ['flag-false', 'no-flag', 'tagged']);
+  assert.deepEqual(await names({ is_fixture: { $nin: [true] } }), ['flag-false', 'no-flag', 'tagged']);
+  assert.deepEqual(await names({ is_fixture: { $ne: true }, name: { $ne: 'tagged' } }), ['flag-false', 'no-flag']);
+  assert.deepEqual(await names({ tags: { $ne: 'a' } }), ['flag-false', 'flag-true', 'no-flag']);
+  assert.equal(await S.count({ is_fixture: { $ne: true } }), 3);
+});
