@@ -1,0 +1,110 @@
+{
+  "pack_id": "2026-11-09-link-corrections",
+  "prepared_by": "Claude (chat research), for Technical Compliance Lead",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Replacement candidates for links that failed the 2026-11-09 link check. Nothing is verified.",
+    "After a replacement is verified, mark the dead Source it replaces as Superseded (a person does this; the importer does not).",
+    "Internal classification is not a legal determination."
+  ],
+  "coverage_gaps": [
+    "Latvia (JUR-0078): the old iaui.gov.lv licence-conditions link now redirects to the State Revenue Service (VID) homepage. No direct successor page was found; vid.gov.lv/en/lottery-and-gambling-tax is already a Source. Find the VID page for interactive gambling licence conditions during verification.",
+    "Germany (JUR-0080): the GGL 2024 and 2025 Merkblatt PDFs (20241230_..., 20250108_...) return 404 on the current GGL site. The January 2023 sheet below is older; check the live GGL site for the current application guidance.",
+    "Mexico (JUR-0077): juegosysorteos.gob.mx could not be opened from Chrome and blocks automated fetching. Leave as unverified until opened by hand.",
+    "Serbia (JUR-0073): the dead 584 'Regulation it and communication electronic communication' PDF could not be matched to a rulebook; the online-games rulebook below is the closest candidate and was not opened."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0081",
+      "jurisdiction_name": "Estonia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude link check 2026-11-09",
+      "authority": "Riigikogu (Riigi Teataja official legal database)",
+      "url": "https://www.riigiteataja.ee/en/akt/513012026001",
+      "source_type": "Legislation database",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Replaces dead PDF https://www.riigiteataja.ee/en/tolge/pdf/513012026001 (page not found). Opened in Chrome 2026-11-09: 'Gambling Act', English translation, in force from 1 Jan 2026."
+    },
+    {
+      "jurisdiction_id": "JUR-0070",
+      "jurisdiction_name": "The Netherlands",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude link check 2026-11-09",
+      "authority": "Kansspelautoriteit (Netherlands Gambling Authority)",
+      "url": "https://kansspelautoriteit.nl/publish/library/30/ksa_remote_gambling_system_assessment_scheme_2-1_eng_wr_2.pdf",
+      "source_type": "Technical standards",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "Replaces dead Dutch-language PDF 0459_ksa_keuringsschema_2-1_... (page not found). English assessment scheme v2.1, October 2024, fetched server-side 2026-11-09; not yet opened in Chrome."
+    },
+    {
+      "jurisdiction_id": "JUR-0080",
+      "jurisdiction_name": "Germany",
+      "territorial_scope": "Country",
+      "language": "German",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude link check 2026-11-09",
+      "authority": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "url": "https://www.gluecksspiel-behoerde.de/images/pdf/onlinepoker-und-virtuelle-automatenspiele/Merkblatt%20Antragsunterlagen%20virtuelles%20Automatenspiel.pdf",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Older (Stand January 2023) fallback for two dead Merkblatt PDFs. Fetched server-side 2026-11-09; may be superseded by newer GGL guidance."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude link check 2026-11-09",
+      "authority": "Games of Chance Administration (Ministry of Finance)",
+      "url": "https://uis.gov.rs/en/pravilnici",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Technical standards and certification",
+        "Legislation and gazette"
+      ],
+      "notes": "Rulebooks index on the regulator's English site; opened in Chrome 2026-11-09. Lists rulebooks including the authorised-laboratories rulebook (English version)."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude link check 2026-11-09",
+      "authority": "Games of Chance Administration (Ministry of Finance)",
+      "url": "https://uis.gov.rs/static/uploads/2729_-_online_EN1.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "English rulebook on approvals for special games of chance online, as listed on the rulebooks index. Link seen, not opened. Possible replacement for dead 584 PDF; confirm."
+    }
+  ]
+}
