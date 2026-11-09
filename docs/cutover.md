@@ -28,6 +28,11 @@ overwritten by the final reload.
 - [ ] Export code is not needed again; export **data** (every table) again from the Base44 Data section
 - [ ] Re-export the 9 private evidence files, or accept re-capture on the next check
 - [ ] Load into the new server with `--replace`; confirm counts against the new CSVs
+- [ ] `--replace` wipes the Sources imported from `docs/source-packs/*.json` (they are not in the Base44 export unless
+      they were added there). Re-run the source-pack import from `app/`:
+      `node --import ./server/register.js server/scripts/import-source-packs.js` (add `--dry-run` to preview).
+      It skips URLs that already exist, sets new Sources to "Awaiting source verification", raises no alerts and is safe
+      to re-run. Check the added/duplicate counts it prints.
 
 ## 4. Switch on
 - [ ] Set `SCHEDULER_ENABLED=true` and restart
