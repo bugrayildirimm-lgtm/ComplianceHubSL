@@ -101,8 +101,16 @@ The fetcher is `server/shared/inspectFetch.ts`; settings are read by `directFetc
   status, content type, byte size, retrieval time, SHA-256 of the bytes, page title, final URL and the first 8,000
   characters of the extracted text (`retrieval_*` fields). If little or no text is extracted the result is a labelled gap
   ("no readable text retrieved", "PDF text extraction failed", "blocked by robots.txt", ...) and no text is invented.
-  `FETCH_RENDER=true` adds an optional Playwright fallback for script-rendered pages under the same allowlist and limits
-  (subresource hosts are checked but not pinned, and `robots.txt` is not re-read for subresources).
+  `FETCH_RENDER=true` (default false) adds an optional Playwright fallback, tried only when the plain fetch returned a
+  200 HTML page with no readable text. The page URL has already passed the allowlist, SSRF and `robots.txt` checks.
+  The browser may reach **only the page's own host**, pinned to the address already vetted (`--host-resolver-rules=MAP
+  host ip, MAP * ~NOTFOUND`): every other name, redirect target, WebSocket and IP literal (including private and
+  metadata addresses) cannot resolve. A second layer (`renderGuard().decide`) aborts anything else, allows only
+  document, script, stylesheet, XHR and fetch requests, and stops after 40 requests. No downloads, service workers,
+  clicks or form submission; only the rendered visible text is read. Blocked requests are listed in the Source's
+  `format_gap`. Playwright is not a project dependency: install it locally with `npm install --no-save playwright`
+  (the version must match the Chromium build available). Because other hosts are blocked, pages that load their content
+  from a separate API host (for example `web-api.apis.bg`) will still come back thin or empty. That is deliberate.
 - **No side effects.** Retrieval never creates a RegulatoryAlert or Notification, never changes `verification_status`,
   `health_status`, the collection baseline (`last_content_hash`) or `collection_authorised`. It writes one AuditEvent
   per click. Retrieval is not verification.
@@ -112,7 +120,10 @@ The fetcher is `server/shared/inspectFetch.ts`; settings are read by `directFetc
 
 - Nine evidence text files were stored in Base44 private storage and are not in the export. They are re-captured on the
   next ordinary check, or re-supplied from Base44.
-- The headless browser (Playwright) is untested against live sites in this environment. The Retrieve-sample fetcher is
-  tested against local servers only; its optional `FETCH_RENDER` fallback has no automated test.
+- The Retrieve-sample fetcher is tested against local servers only. The optional `FETCH_RENDER` browser policy has
+  automated tests (mocked browser, plus real Chromium against local servers when Playwright is installed), and a first
+  live trial on 7 sources. Two known gaps in the browser path: (1) the page's own scripts can still make requests to its
+  own host (for example a form post), and the code only reads text, never clicks or submits; (2) browser requests to the
+  page host are not spaced by the per-host 2-second gap (they are capped at 40 per page instead).
 - The AI step uses the Anthropic API (`ANTHROPIC_API_KEY`); prompts were written for Base44's model and need re-checking.
 - Base44-specific self-tests (`securitySelfTests`, `accessAcceptance`) were ported but depend on Base44 behaviour.

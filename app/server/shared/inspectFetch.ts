@@ -353,36 +353,56 @@ async function pdfText(body, timeoutMs) {
 const BLOCK_PAGE = /captcha|are you a robot|access denied|enable javascript|sign in to continue|403 forbidden/i;
 
 // Optional Playwright fallback (FETCH_RENDER=true) for script-rendered pages. Every request the browser makes is
-// checked against the same URL policy, allowlist and DNS rules; the main host is pinned with a host-resolver rule.
-// Subresource hosts are checked but not pinned, and robots.txt is not re-read for subresources.
+// checked against the URL policy. The browser may talk to ONE host only: the page's own host, pinned to the address
+// already vetted. Everything else, IP literals included, cannot even resolve (resolver rule), so no other host, redirect target, WebSocket
+// or private address is reachable, and DNS cannot be rebound. Only document/script/stylesheet/xhr/fetch are allowed,
+// at most MAX_RENDER_REQUESTS of them. robots.txt for the page was checked by the plain fetch; it is not re-read per
+// subresource, which is why subresources are limited to the same host. Blocked requests are listed in `blocked`.
+export const MAX_RENDER_REQUESTS = 40;
+export const RENDER_TYPES = new Set(['document', 'script', 'stylesheet', 'xhr', 'fetch']);
+
+// The whole browser policy in one testable place: launch argument (host pinning) and a per-request decision.
+export function renderGuard(host, address, { maxRequests = MAX_RENDER_REQUESTS } = {}) {
+  const ip = address.includes(':') ? `[${address}]` : address;
+  const resolverRules = `MAP ${host} ${ip}, MAP * ~NOTFOUND`;
+  let count = 0;
+  const decide = (url, resourceType) => {
+    const c = checkUrl(url);
+    if (!c.ok) return { allow: false, why: c.gap || 'url policy' };
+    if (c.host !== host) return { allow: false, why: 'other host' };
+    if (!RENDER_TYPES.has(resourceType)) return { allow: false, why: `type ${resourceType}` };
+    if (++count > maxRequests) return { allow: false, why: 'request cap' };
+    return { allow: true, why: '' };
+  };
+  return { args: [`--host-resolver-rules=${resolverRules}`], resolverRules, decide };
+}
+
 async function renderText(ctx, checked, address) {
   let browser;
+  const blocked = [];
+  const note = (url, why) => { if (blocked.length < 50) blocked.push({ url: String(url).slice(0, 200), why }); };
   try {
-    const { chromium } = await import('playwright');
-    const rule = `MAP ${checked.host} ${address.includes(':') ? `[${address}]` : address}`;
-    browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE_PATH || undefined, args: [`--host-resolver-rules=${rule}`] });
+    const { chromium } = ctx.deps.chromium ? { chromium: ctx.deps.chromium } : await import('playwright');
+    const guard = renderGuard(checked.host, address);
+    browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE_PATH || undefined, args: guard.args });
     const context = await browser.newContext({ userAgent: ctx.cfg.userAgent, acceptDownloads: false, serviceWorkers: 'block' });
     await context.route('**/*', async (route) => {
       const req = route.request();
-      const c = checkUrl(req.url());
-      if (!c.ok || ['image', 'media', 'font'].includes(req.resourceType())) return route.abort('blockedbyclient');
-      if (c.host !== checked.host) {
-        const a = await admit(ctx, c, 1);
-        if (!a.ok) return route.abort('blockedbyclient');
-      }
+      const d = guard.decide(req.url(), req.resourceType());
+      if (!d.allow) { note(req.url(), d.why); return route.abort('blockedbyclient'); }
       return route.continue();
     });
     const page = await context.newPage();
     const run = (async () => {
       await page.goto(checked.url.href, { timeout: ctx.cfg.timeoutMs, waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(2000);
-      return { text: String(await page.evaluate(() => document.body?.innerText || '')), title: String(await page.title()) };
+      return { text: String(await page.evaluate(() => document.body?.innerText || '')), title: String(await page.title()), blocked };
     })();
     let timer;
     const limit = new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('rendering timed out')), ctx.cfg.timeoutMs * 2); });
     try { return await Promise.race([run, limit]); } finally { clearTimeout(timer); }
   } catch (e) {
-    return { error: String(e?.message || e) };
+    return { error: String(e?.message || e), blocked };
   } finally {
     await browser?.close().catch(() => {});
   }
@@ -449,16 +469,17 @@ export async function inspectFetch(rawUrl, { allowedHosts = new Set(), deps: dep
     const decoded = decodeText(res.body, contentType);
     text = kind === 'html' ? htmlToText(decoded) : decoded.trim();
     title = kind === 'html' ? htmlToText(decoded.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').slice(0, 300) : '';
-    let rendered = false;
+    let rendered = false; let renderNote = '';
     const poor = text.length < MIN_READABLE_CHARS || (text.length < 1500 && BLOCK_PAGE.test(text));
     if (poor && kind === 'html' && cfg.render) {
       const r = await renderText(ctx, checked, address);
+      renderNote = ` Rendering: ${r.error ? `failed (${r.error.slice(0, 160)})` : 'ran'}; ${r.blocked?.length || 0} subresource request(s) blocked${r.blocked?.length ? ` (${[...new Set(r.blocked.map((b) => b.why))].join(', ')}; e.g. ${r.blocked[0].url})` : ''}.`;
       if (!r.error && r.text.trim().length >= MIN_READABLE_CHARS) { text = r.text.trim(); title = title || r.title.slice(0, 300); rendered = true; }
     }
     if (text.length < MIN_READABLE_CHARS || (!rendered && text.length < 1500 && BLOCK_PAGE.test(text))) {
-      return { ...common, kind, title, text: '', ok: false, code: 'NO_READABLE_TEXT', gap: `${GAP_LABELS.NO_READABLE_TEXT}: the page returned ${text.length} characters of visible text (script-rendered or access-check page?). No content was reconstructed` };
+      return { ...common, kind, title, text: '', ok: false, code: 'NO_READABLE_TEXT', gap: `${GAP_LABELS.NO_READABLE_TEXT}: the page returned ${text.length} characters of visible text (script-rendered or access-check page?). No content was reconstructed.${renderNote}` };
     }
-    return { ...common, ok: true, kind, rendered, title, text: text.slice(0, TEXT_CAP), text_chars: text.length, extraction: text.length > TEXT_CAP ? 'Partial' : 'Complete', code: '', gap: rendered ? 'Text came from browser rendering (FETCH_RENDER); it is the rendered page text, not the raw HTML.' : '' };
+    return { ...common, ok: true, kind, rendered, title, text: text.slice(0, TEXT_CAP), text_chars: text.length, extraction: text.length > TEXT_CAP ? 'Partial' : 'Complete', code: '', gap: rendered ? 'Text came from browser rendering (FETCH_RENDER); it is the rendered page text, not the raw HTML.' + renderNote : '' };
   }
   return { ...common, ok: true, kind, title, text: text.slice(0, TEXT_CAP), text_chars: text.length, extraction: text.length > TEXT_CAP ? 'Partial' : 'Complete', code: '', gap: '' };
 }
