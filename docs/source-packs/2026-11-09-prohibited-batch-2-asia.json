@@ -1,0 +1,64 @@
+{
+  "pack_id": "2026-11-09-prohibited-batch-2-asia",
+  "prepared_by": "Claude",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Sources import as 'Awaiting source verification'; no legal determination is made.",
+    "Internal classification (Prohibited Territory) is unchanged and is not a legal determination.",
+    "Collection authorisation fields are left blank for the compliance lead to set.",
+    "No requirements are proposed; these are watch-list sources only."
+  ],
+  "coverage_gaps": [
+    "Macau: online gaming is described by law-firm guides as not permitted, and Law 20/2024 (illegal gambling) criminalises unauthorised online gaming; neither the law text nor the Official Gazette (Boletim Oficial) index URL was confirmed, so only the regulator DICJ is listed.",
+    "Indonesia: legal basis per Komdigi's own legal note is the ITE Law (Law 1/2024, Art. 27(2)) and the Criminal Code (new code in force 1 Jan 2026); press reports a 2026 financial-sector law (Law 4/2026) used against online gambling. Only the Komdigi legal database portal is listed.",
+    "Hong Kong: Gambling Ordinance (Cap. 148) with the Jockey Club as the only authorised bookmaker; the 2025 basketball betting amendment was reported. The e-Legislation page and Home and Youth Affairs Bureau page were not seen as URLs, so none is listed.",
+    "Thailand: no official URL seen. Casino legalisation (Entertainment Complex Bill) is reported by trade press as stalled, with the Senate suggesting a referendum; the draft bill bars online gambling. Unverified.",
+    "Vietnam: no official URL seen. Ministry of Finance decrees on betting/casinos and a 2026 penalty decree were reported by press, not confirmed.",
+    "Malaysia: no official URL seen. Betting Act 1953 and Common Gaming Houses Act 1953 apply; an anti-online-gambling bill was reported as being drafted in 2026 and not yet tabled (press). Online Safety Act 2025 reported in force 1 Jan 2026 (unverified).",
+    "Turkey: Law 7258 and the National Lottery Administration (Milli Piyango) / BTK blocking were reported in press only; no official URL (Resmi Gazete, Treasury, BTK) was seen. A 2025-2026 Action Plan was reportedly published in the Resmi Gazette on 1 Nov 2025.",
+    "Taiwan: Criminal Code Arts. 266 and 270 amended to cover online gambling (reported 2022 by Vixio, trade) and the Sports Lottery Issuance Act amended in June 2025 (news). No official URL (Ministry of Justice, law database, Sports Administration) was seen.",
+    "Philippines/Japan carried over from batch 1: official URLs still missing.",
+    "Bangladesh: trade press reports a Gambling Prevention Act 2026 (July 2026); not researched yet.",
+    "Not yet covered from this region: China, Cambodia, Laos, Pakistan, Sri Lanka, Nepal, Bhutan, Brunei, Afghanistan, North Korea, Papua New Guinea, Tonga, and the Gulf/Middle East countries."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0005",
+      "jurisdiction_name": "Macau",
+      "language": "Chinese/Portuguese/English",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Gaming Inspection and Coordination Bureau (DICJ), Macao SAR",
+      "url": "https://www.dicj.gov.mo",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette",
+        "Enforcement and sanctions"
+      ],
+      "notes": "DICJ states this is its only official website and that Macau has never issued an online interactive gaming licence (per a gov.mo notice). Confirm it opens."
+    },
+    {
+      "jurisdiction_id": "JUR-0014",
+      "jurisdiction_name": "Indonesia",
+      "language": "Indonesian",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Communication and Digital Affairs (Komdigi) legal database (JDIH)",
+      "url": "https://jdih.komdigi.go.id",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette",
+        "Enforcement and sanctions"
+      ],
+      "notes": "Root of Komdigi's legal database, inferred from a document URL (jdih.komdigi.go.id/dokumen-pembentukan-puu/unduh/69) that sets out the legal status of online gambling. Confirm the root opens."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "pack_id": "2026-11-08-montenegro",
+  "prepared_by": "Claude",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Sources import as 'Awaiting source verification'; no legal determination is made.",
+    "Collection authorisation fields are left blank for the compliance lead to set.",
+    "No requirements are proposed in this pack."
+  ],
+  "coverage_gaps": [
+    "Regulator's own page (Uprava za igre na sreću on gov.me) could not be opened; URL not confirmed.",
+    "No source found yet for rules specific to online licensing or software/game technical standards.",
+    "Excluded as land-based only: gazette items 394277, 394278 (slot-machine records), 394284 (inspector ID card).",
+    "Trade-press reports of phased rollout and secondary rules since Aug 2025 were not used as sources."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0076",
+      "jurisdiction_name": "Montenegro",
+      "territorial_scope": "Country",
+      "language": "Montenegrin (Serbian/Croatian/Bosnian)",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Finance of Montenegro (document library)",
+      "url": "https://www.gov.me/en/documents/92821f81-eede-40a1-a1fc-878e1c22e0a2",
+      "source_type": "Legislation database",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Document-library entry titled 'Zakon o igrama na sreću', published 15 Dec 2025. Found via search; page not opened. Confirm it is the text of the Law published in Službeni list CG 91/25 (in force 1 Aug 2025 per trade press), not a later consolidated or amended version."
+    },
+    {
+      "jurisdiction_id": "JUR-0076",
+      "jurisdiction_name": "Montenegro",
+      "territorial_scope": "Country",
+      "language": "Montenegrin (Serbian/Croatian/Bosnian)",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Finance of Montenegro (Official Gazette)",
+      "url": "https://www.sluzbenilist.me/propisi/389880/download",
+      "source_type": "Official gazette",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Rulebook on advertising of games of chance on outdoor media, issued under Art. 19(6) of the Law (91/25). Shown as gazette PDF; relevance to online advertising not checked."
+    },
+    {
+      "jurisdiction_id": "JUR-0076",
+      "jurisdiction_name": "Montenegro",
+      "territorial_scope": "Country",
+      "language": "Montenegrin (Serbian/Croatian/Bosnian)",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Finance of Montenegro (Official Gazette)",
+      "url": "https://www.sluzbenilist.me/propisi/394283/download",
+      "source_type": "Official gazette",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Amendment to the rulebook on the monthly records form and fee-payment proof for operators of online games of chance. Online-operator reporting; text not read in full."
+    },
+    {
+      "jurisdiction_id": "JUR-0076",
+      "jurisdiction_name": "Montenegro",
+      "territorial_scope": "Country",
+      "language": "Montenegrin (Serbian/Croatian/Bosnian)",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Official Gazette of Montenegro (Službeni list CG)",
+      "url": "https://www.sluzbenilist.me/",
+      "source_type": "Official gazette",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Gazette home, to catch new rulebooks under Law 91/25. Home-page capture only shows latest items; a gazette search or listing URL for 'igre na sreću' should replace it once confirmed."
+    }
+  ]
+}
