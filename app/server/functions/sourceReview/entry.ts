@@ -2,7 +2,8 @@ import { createClientFromRequest } from 'npm:@base44/sdk@0.8.54';
 import { resolveActor, logAudit, shortText, json } from '../../shared/compliance.ts';
 import { publisherFingerprint, canonicalUrl } from '../../shared/publicationTraversal.ts';
 import { retrievePublication } from '../../shared/retrievePublication.ts';
-import { FETCH_MAINTENANCE } from '../../shared/protectedFetch.ts';
+import { FETCH_MAINTENANCE, directFetchConfig } from '../../shared/protectedFetch.ts';
+import { inspectSource, allowedHostsFromSources } from '../../shared/inspectFetch.ts';
 
 export default async function(req) {
   const base44 = createClientFromRequest(req);
@@ -48,19 +49,19 @@ export default async function(req) {
     const sources = await E.Source.filter({ id: { $in: ids } });
     if (body.op === 'inspect') {
       if (ids.length > 2) return json({ error: 'Inspect at most two sources per request.' }, 400);
-      // Retrieval is contained: no outbound request is made until a
-      // connection-pinned protected-fetch transport is available.
-      if (FETCH_MAINTENANCE.paused) return json({ ...FETCH_MAINTENANCE }, 503);
+      // Retrieval stays paused unless the owner sets DIRECT_FETCH_ENABLED=true (and FETCH_CONTACT). Only this action
+      // may use the bounded fetcher; every other caller keeps the paused behaviour.
+      const fetchConfig = directFetchConfig();
+      if (!fetchConfig.enabled) return json({ ...FETCH_MAINTENANCE }, 503);
+      if (!fetchConfig.ready) return json({ ...FETCH_MAINTENANCE, code: 'DIRECT_FETCH_CONFIG_ERROR', message: 'Direct retrieval is misconfigured', reason: fetchConfig.problem }, 503);
+      const allowedHosts = allowedHostsFromSources(await E.Source.filter({ is_fixture: { $ne: true } }, { limit: 20000 }));
       const results = [];
       for (const s of sources) {
         if (s.is_fixture) continue;
         try {
-          const p = await retrievePublication(base44, s.url, s, true);
-          const sample = p.pdf ? s.url : p.links.find(l => l.kind !== 'Listing')?.url || '';
-          let sampleResult = '';
-          if (sample && sample !== s.url) { const d = await retrievePublication(base44, sample, s, false); sampleResult = `Sample HTTP ${d.status}; extraction ${d.extraction}. ${d.note}`; }
-          await E.Source.update(s.id, { sample_document_url: sample || s.sample_document_url || '', retrieval_http_status: p.status, retrieval_page_title: p.title, retrieval_tested_at: new Date().toISOString(), retrieval_result: `HTTP ${p.status}; ${p.size} bytes. ${sampleResult}`, extraction_status: p.extraction, format_gap: p.extraction === 'Complete' ? '' : p.note, review_attention: p.note, publisher_evidence: `${s.publisher_evidence || ''} Retrieved page wording (not proof of provenance): ${shortText(p.text, 500)}`.slice(-1800) });
-          results.push({ id: s.id, extraction: p.extraction, sample, limitations: p.note });
+          const r = await inspectSource(E, s, { allowedHosts, config: fetchConfig });
+          await logAudit(base44, actor, { event_type: 'Source sample retrieval', entity_type: 'Source', entity_id: s.id, entity_label: s.source_id, summary: r.attempted ? `Retrieve sample attempted once for ${s.source_id}: ${r.ok ? 'text retrieved' : r.gap}` : `Retrieve sample not attempted for ${s.source_id}: ${r.limitations}`, detail: r.content_hash || '', recorded_by: 'sourceReview' });
+          results.push(r);
         } catch (error) { await E.Source.update(s.id, { review_attention: shortText(error.message, 500), format_gap: shortText(error.message, 500) }); results.push({ id: s.id, error: error.message }); }
       }
       return json({ results, note: 'Retrieval is not verification. No approval decision was made.' });

@@ -75,6 +75,35 @@
     "retrieval_page_title": {
       "type": "string"
     },
+    "retrieval_content_type": {
+      "type": "string",
+      "description": "Content type of the last Retrieve-sample attempt"
+    },
+    "retrieval_bytes": {
+      "type": "number"
+    },
+    "retrieval_content_hash": {
+      "type": "string",
+      "description": "SHA-256 of the bytes retrieved by Retrieve sample. Separate from last_content_hash, the collection baseline."
+    },
+    "retrieval_final_url": {
+      "type": "string"
+    },
+    "retrieval_excerpt": {
+      "type": "string",
+      "description": "Verbatim extracted text from the last Retrieve-sample attempt, first 8,000 characters. Empty when retrieval failed."
+    },
+    "retrieval_text_chars": {
+      "type": "number",
+      "description": "Total characters of extracted text (the excerpt holds at most the first 8,000)"
+    },
+    "retrieval_failure_code": {
+      "type": "string",
+      "description": "Known PDF/format failure (PDF_EXTRACTION_FAILED, UNSUPPORTED_CONTENT_TYPE, TOO_LARGE). Such a failure is not retried; the stored failure is shown."
+    },
+    "retrieval_failure_url": {
+      "type": "string"
+    },
     "publisher_evidence": {
       "type": "string"
     },

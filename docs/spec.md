@@ -75,10 +75,44 @@ Scheduled runs act as the designated job-runner user in `MonitoringConfig`.
 - **Not yet built:** multi-factor authentication and SSO (deferred by decision); field-level `rls` inside individual
   properties (server-side functions remain the write path for sensitive fields).
 
+## Retrieve sample (direct fetch, Source review only)
+
+The "Retrieve sample" button (`sourceReview` op `inspect`) can fetch one source page, once, for a reviewer. It is off
+unless `DIRECT_FETCH_ENABLED=true` and `FETCH_CONTACT` are set; when off, it answers 503 `DIRECT_FETCH_DISABLED` exactly as
+before. `discoverSources`, `runDiscoveryBatch`, `runRequirementResearch`, `correctMarketBlock`, `collectSources` and the
+scheduler never use it: `requireProtectedFetch`, `protectedFetch`, `outboundDecision` and `FETCH_MAINTENANCE` still refuse.
+The fetcher is `server/shared/inspectFetch.ts`; settings are read by `directFetchConfig()` in `protectedFetch.ts`.
+
+- **Allowlist.** A URL may be fetched only if its host equals the host of an existing Source that is not Rejected (and not
+  a fixture). A redirect may also stay on the same registrable domain as the starting host (approximated without a
+  public-suffix list: last two labels, or three for `gov.uk`-style country-code second levels).
+- **SSRF.** http/https only, ports 80/443 only, no credentials in the URL. The host is resolved; if ANY answer is
+  private, loopback, link-local, metadata or reserved (IPv4 and IPv6, including IPv4-mapped and NAT64 forms) the request
+  is refused. The connection is then made to the address that was checked, so a later DNS answer cannot change the target.
+  The same checks run on every redirect hop (maximum `FETCH_MAX_REDIRECTS`, default 5).
+- **Politeness.** `robots.txt` is fetched and honoured per host (longest matching rule wins; our product group beats `*`;
+  404 means no rules; a 5xx or unreadable `robots.txt` means nothing is fetched). One request per host at a time, at least
+  2 s apart. User agent `StakelogicComplianceHub/1.0 (+FETCH_CONTACT)`.
+- **Bounds.** One attempt per source per click, no automatic retry, no link-following or sample crawl. Per-request timeout
+  (`FETCH_TIMEOUT_MS`, 20 s), byte limit (`FETCH_MAX_BYTES`, 10 MB), text/HTML/PDF only. A source with a stored known
+  PDF/format failure (`retrieval_failure_code` PDF_EXTRACTION_FAILED, UNSUPPORTED_CONTENT_TYPE or TOO_LARGE, or a legacy
+  Base44 PDF/format gap) is not fetched again; the stored failure is shown.
+- **Evidence, not conclusions.** HTML is reduced to visible text, PDF text comes from `unpdf`. The Source records HTTP
+  status, content type, byte size, retrieval time, SHA-256 of the bytes, page title, final URL and the first 8,000
+  characters of the extracted text (`retrieval_*` fields). If little or no text is extracted the result is a labelled gap
+  ("no readable text retrieved", "PDF text extraction failed", "blocked by robots.txt", ...) and no text is invented.
+  `FETCH_RENDER=true` adds an optional Playwright fallback for script-rendered pages under the same allowlist and limits
+  (subresource hosts are checked but not pinned, and `robots.txt` is not re-read for subresources).
+- **No side effects.** Retrieval never creates a RegulatoryAlert or Notification, never changes `verification_status`,
+  `health_status`, the collection baseline (`last_content_hash`) or `collection_authorised`. It writes one AuditEvent
+  per click. Retrieval is not verification.
+
 ## Known gaps
+
 
 - Nine evidence text files were stored in Base44 private storage and are not in the export. They are re-captured on the
   next ordinary check, or re-supplied from Base44.
-- The headless browser (Playwright) is untested against live sites in this environment.
+- The headless browser (Playwright) is untested against live sites in this environment. The Retrieve-sample fetcher is
+  tested against local servers only; its optional `FETCH_RENDER` fallback has no automated test.
 - The AI step uses the Anthropic API (`ANTHROPIC_API_KEY`); prompts were written for Base44's model and need re-checking.
 - Base44-specific self-tests (`securitySelfTests`, `accessAcceptance`) were ported but depend on Base44 behaviour.
