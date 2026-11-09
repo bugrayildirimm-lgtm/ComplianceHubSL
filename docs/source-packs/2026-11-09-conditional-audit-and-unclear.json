@@ -1,0 +1,222 @@
+{
+  "pack_id": "2026-11-09-conditional-audit-and-unclear",
+  "prepared_by": "Claude (chat research), for Technical Compliance Lead",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Only URLs seen in search results are listed; none opened or verified.",
+    "Internal classification is not a legal determination."
+  ],
+  "coverage_gaps": [
+    "Mexico (JUR-0077): regulator is SEGOB's Dirección General de Juegos y Sorteos under the Federal Law on Games and Lotteries (1947); online sites must be tied to a land-based permit holder; IEPS on online gambling raised to 50% from 1 Jan 2026; SEGOB finished a draft replacement law in Sept-Oct 2026 and suspended 10 online casino domains in July 2026 (trade press). No SEGOB/DOF URL seen.",
+    "Croatia (JUR-0082): Ministry of Finance (games of chance department) licenses; online casino requires a land-based casino concession; 2025 amendment (NN 72/2025) and 2026 fee and tax rises (trade press). No Ministry of Finance or Narodne novine URL seen.",
+    "Angola (JUR-0029): Gaming Activity Law 17/24 of 28 Oct 2024 replaced Law 5/16; regulator ISJ (Instituto de Supervisão de Jogos) issues online licences, with a 30-day transitional window and active blocking of unlicensed sites in 2026. Only lex.ao (private portal) surfaced; no ISJ or Diário da República URL.",
+    "Kosovo (JUR-0050): Law on the Prohibition of Games of Chance in force since 2019 for 10 years (all gambling banned except the Kosovo lottery). Label 'Prohibited' looks correct. A draft law URL exists on kryeministri.rks-gov.net but is a draft; not listed.",
+    "Cote D'Ivoire (JUR-0066): regulator ARJH (since 2021) under Law 2020-480; Dec 2023 decrees reserve sports and horse betting (physical and online) to LONACI; other online games need ARJH authorisation. No ARJH URL seen.",
+    "Tanzania (JUR-0094): regulator is the Gaming Board of Tanzania under the Gaming Act Cap. 41; online casino and sports betting licensed (about 30 operators, trade sources). No GBT URL seen.",
+    "Serbia: online licences for special games exist; classical games (lottery, bingo) online are state lottery only (Legal500).",
+    "Estonia: B2C only licensed; no B2B licence; software suppliers need no licence; EEA licences not recognised (Legal500).",
+    "Still unchecked from the unclear group: Papua New Guinea, Zimbabwe, Bolivia, Cameroon, Virgin Islands (UK), Paraguay, El Salvador, Myanmar, Namibia.",
+    "Labels that look wrong: Tanzania (licensed online market, regulator active), Angola (licensing open under 2024 law), Cote D'Ivoire (regulated, partly LONACI monopoly). Kosovo looks correct."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Games of Chance Administration (Ministry of Finance)",
+      "url": "https://uis.gov.rs/en/uprava",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Regulator page seen in search results. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Games of Chance Administration (Ministry of Finance)",
+      "url": "https://uis.gov.rs/static/uploads/2753_Law_on_games_of_chance.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "English text of Law on Games of Chance (OG RS 18/2020, 94/2024). An older 383_ copy also exists; prefer this one. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Games of Chance Administration (Ministry of Finance)",
+      "url": "https://www.uis.gov.rs/rsc/spisakpnaziv",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing",
+        "Enforcement and sanctions"
+      ],
+      "notes": "Official List of Organisers (licensed operators). Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0082",
+      "jurisdiction_name": "Croatia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Tax Administration (Porezna uprava)",
+      "url": "https://porezna-uprava.gov.hr/en/unauthorized-performing-of-economic-activity-online/7393",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Enforcement and sanctions"
+      ],
+      "notes": "Unauthorised online gambling blocking orders; also states the licensing basis. Ministry of Finance gambling page URL not seen. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0081",
+      "jurisdiction_name": "Estonia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Riigi Teataja (State Gazette)",
+      "url": "https://www.riigiteataja.ee/en/tolge/pdf/513012026001",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "English translation of the Gambling Act, version dated 13.01.2026. URL is version-specific; will go stale on the next consolidation. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0081",
+      "jurisdiction_name": "Estonia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Riigi Teataja (State Gazette)",
+      "url": "https://www.riigiteataja.ee/en/eli/518022026005/consolide",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Appears to be the Gambling Tax Act consolidated 2026 (inferred from content). Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0078",
+      "jurisdiction_name": "Latvia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Likumi.lv (Latvijas Vestnesis)",
+      "url": "https://likumi.lv/ta/en/id/122941-on-gambling-and-lotteries",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law On Gambling and Lotteries, English text. Amendments in force 1 April 2026 moved supervision to the State Revenue Service (law-firm report). Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0078",
+      "jurisdiction_name": "Latvia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Finance",
+      "url": "https://www.fm.gov.lv/en/policy-organization-lotteries-gambling-and-lotteries-goods-and-services",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Policy page. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0078",
+      "jurisdiction_name": "Latvia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "State Revenue Service (VID)",
+      "url": "https://www.vid.gov.lv/en/lottery-and-gambling-tax",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Seen in search results; confirm this is the new gambling supervision section after the 2026 transfer. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0094",
+      "jurisdiction_name": "Tanzania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Tanzania Revenue Authority (hosting GN 478T)",
+      "url": "https://tra.go.tz/Images/GN_NO_478T_THE_GAMING_INTERNET_GAMING_REGULATIONS_2022.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Internet Gaming Regulations 2022 (GN 478T). Includes service provider licence. Hosted by TRA, not the Gaming Board. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0066",
+      "jurisdiction_name": "Cote D'Ivoire",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "National Assembly of Côte d'Ivoire",
+      "url": "https://assnat.ci/IMG/pdf/loi_regime_juridique_jeux_de_hasard.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Text refers to itself as a bill ('projet de loi') for the gambling legal regime; enacted as Law 2020-480 of 27 May 2020. Check against the Journal Officiel version. Not opened."
+    }
+  ]
+}

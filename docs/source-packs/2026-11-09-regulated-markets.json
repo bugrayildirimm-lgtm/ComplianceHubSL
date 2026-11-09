@@ -1,0 +1,166 @@
+{
+  "pack_id": "2026-11-09-regulated-markets",
+  "prepared_by": "Claude (chat research), for Technical Compliance Lead",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Only URLs seen in search results are listed; none opened or verified.",
+    "Internal classification is not a legal determination.",
+    "Imported as Awaiting source verification; must not raise new-regulation alerts."
+  ],
+  "coverage_gaps": [
+    "Bulgaria (JUR-0026): regulator is the National Revenue Agency (Gambling Act); no official URL confirmed.",
+    "France (JUR-0018): regulator is ANJ; online poker and betting are licensed, casino games online are not; no official URL confirmed.",
+    "Panama (JUR-0047): regulated by the Junta de Control de Juegos under the Ministry of Economy and Finance; online licensing reported; no official URL seen (only a legal dictionary and trade sites).",
+    "Albania (JUR-0030): 2019 ban on online and sports betting lifted by Law 18/2024 for online sports betting only; regulatory package completed mid-2026; as of Aug 2026 no licences issued; no online casino framework (trade press). No official URL seen.",
+    "Monaco (JUR-0063): state monopoly (SBM) under Law 1.103 of 1987; no online licensing framework; Bill 722 pending (trade press). Regulator is the Service de Contrôle des Jeux; no official URL seen.",
+    "Cambodia (JUR-0025): licensed land-based casinos under the Law on Management of Commercial Gambling; online gambling banned (no licences since 2019); CGMC enforcing from Oct 2026; draft Suppression of Illegal Gambling law under review (trade press). No official URL seen.",
+    "Labels likely outdated or needing a decision: Brazil, Philippines, UAE, Australia, Singapore, Bulgaria, Lithuania, Georgia, Hungary, Cyprus, France, Kenya, South Africa, Panama, Albania (prospective), North Macedonia (state monopoly), Monaco (monopoly), Cambodia (land-based only)."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0017",
+      "jurisdiction_name": "Georgia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Legislative Herald of Georgia (Matsne)",
+      "url": "https://matsne.gov.ge/en/document/view/30988",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Seen in search results; believed to be the gambling law. Not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0017",
+      "jurisdiction_name": "Georgia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Revenue Service of Georgia",
+      "url": "https://old.rs.ge/en/4992",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Seen in search results; gambling licensing page. Legacy 'old.' host may be retired."
+    },
+    {
+      "jurisdiction_id": "JUR-0045",
+      "jurisdiction_name": "Hungary",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Njt.hu national legislation database",
+      "url": "https://njt.jog.gov.hu/jogszabaly/1991-34-00-00",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Seen in search results; believed to be Act XXXIV of 1991 on gambling. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0021",
+      "jurisdiction_name": "Cyprus",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "National Betting Authority",
+      "url": "https://nba.gov.cy",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing",
+        "Enforcement and sanctions"
+      ],
+      "notes": "Domain seen in search results. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0006",
+      "jurisdiction_name": "Lithuania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Gaming Control Authority",
+      "url": "https://lpt.lrv.lt/en/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Domain seen in search results. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0064",
+      "jurisdiction_name": "Kenya",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Betting Control and Licensing Board / Gambling Regulatory Authority",
+      "url": "https://gra.go.ke",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Domain seen in search results; confirm the regulator's current name. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0100",
+      "jurisdiction_name": "South Africa",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "National Gambling Board",
+      "url": "https://ngb.org.za",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Domain seen in search results. Not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0003",
+      "jurisdiction_name": "North-Macedonia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Public Revenue Office",
+      "url": "https://www.ujp.gov.mk/en/vodic/category/418",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Seen in search results; guide on games of chance. New Law on Games of Chance adopted 29 June 2026, in force 14 July 2026 (trade/law-firm reports): online gambling to state-owned company from 1 Jan 2027. Not verified."
+    }
+  ]
+}

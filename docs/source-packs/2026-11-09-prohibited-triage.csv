@@ -1,0 +1,79 @@
+jurisdiction,jurisdiction_id,triage,basis
+Albania,JUR-0030,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Australia,JUR-0028,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Brazil,JUR-0059,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Bulgaria,JUR-0026,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Cambodia,JUR-0025,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Cyprus,JUR-0021,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+France,JUR-0018,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Georgia,JUR-0017,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Hungary,JUR-0045,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Kenya,JUR-0064,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Lithuania,JUR-0006,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Monaco,JUR-0063,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+North-Macedonia,JUR-0003,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Panama,JUR-0047,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Philippines,JUR-0106,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Singapore,JUR-0102,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+South Africa,JUR-0100,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+The United Arab Emirates,JUR-0093,"Regulated market exists - label may be outdated, worth proper sources",Claude general knowledge plus batch 1-2 searches; not verified
+Afghanistan,JUR-0031,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Belarus,JUR-0027,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Crimea,JUR-0023,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Cuba,JUR-0022,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+DR Congo (Kinshasa),JUR-0019,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Haiti,JUR-0065,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Iran,JUR-0013,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Iraq,JUR-0012,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Libya,JUR-0007,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+North Korea,JUR-0020,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Russian Federation,JUR-0104,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Somalia,JUR-0101,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+South Sudan,JUR-0099,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Sudan,JUR-0097,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Syria,JUR-0096,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Venezuela,JUR-0062,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Yemen,JUR-0089,Sanctions-driven (watch sanctions authorities),Claude general knowledge plus batch 1-2 searches; not verified
+Algeria,JUR-0008,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Bahrain,JUR-0058,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Bangladesh,JUR-0057,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Bhutan,JUR-0056,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Brunei,JUR-0055,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+China,JUR-0024,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Egypt,JUR-0054,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Hong Kong,JUR-0016,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+India,JUR-0015,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Indonesia,JUR-0014,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Japan,JUR-0011,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Jordan,JUR-0053,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Kuwait,JUR-0010,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Lao People’s Democratic Republic (Laos),JUR-0032,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Lebanon,JUR-0009,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Macau,JUR-0005,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Malaysia,JUR-0004,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Mauritania,JUR-0052,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Nepal,JUR-0110,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Oman,JUR-0109,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Pakistan,JUR-0108,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Qatar,JUR-0105,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Saudi Arabia,JUR-0103,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Sri Lanka,JUR-0098,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Taiwan,JUR-0095,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Thailand,JUR-0069,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Tonga,JUR-0051,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Tunisia,JUR-0092,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Turkey,JUR-0091,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Vietnam,JUR-0090,Total ban or state monopoly (regulator/law pointer is enough),Claude general knowledge plus batch 1-2 searches; not verified
+Angola,JUR-0029,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Bolivia,JUR-0068,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Cameroon,JUR-0067,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Cote D'Ivoire,JUR-0066,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+El Salvador,JUR-0046,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Kosovo,JUR-0050,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Myanmar,JUR-0002,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Namibia,JUR-0001,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Papua New Guinea,JUR-0107,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Paraguay,JUR-0060,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Tanzania,JUR-0094,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Virgin Islands (UK),JUR-0061,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified
+Zimbabwe,JUR-0088,Unclear - quick check needed,Claude general knowledge plus batch 1-2 searches; not verified

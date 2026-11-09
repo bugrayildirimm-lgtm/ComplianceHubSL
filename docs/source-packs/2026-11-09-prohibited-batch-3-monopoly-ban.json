@@ -1,0 +1,58 @@
+{
+  "pack_id": "2026-11-09-prohibited-batch-3-monopoly-ban",
+  "prepared_by": "Claude (chat research), for Technical Compliance Lead",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Only URLs seen in search results are listed; none opened or verified.",
+    "Internal classification is not a legal determination."
+  ],
+  "coverage_gaps": [
+    "Turkey (JUR-0091): Law 7258 (state monopoly on sports betting and games of chance: Spor Toto, Milli Piyango, Jockey Club); Penal Code Art. 228 and Law 5651 cover illegal gambling and site blocking (law-firm sources). Only the Spor Toto page above was seen.",
+    "Japan (JUR-0011): Penal Code Arts. 185-186; online casinos illegal even if licensed abroad; 2025 measures against promoting online gambling (DLA Piper, trade press). No e-Gov or NPA URL seen.",
+    "Thailand (JUR-0069): Gambling Act B.E. 2478 (1935); Computer Crime Act s.20 blocking; draft amendment to allow authorised online gambling under consultation in 2026 (Tilleke & Gibbins). No Royal Gazette or Council of State URL seen.",
+    "Vietnam (JUR-0090): casinos licensed by Ministry of Finance; locals allowed only in a pilot (Resolution 8/2025/NQ-CP); online betting illegal for citizens; Decree 121/2021 covers foreigner-only electronic games. Only commercial legal databases (thuvienphapluat.vn, hethongphapluat.vn) surfaced, not listed as sources.",
+    "Hong Kong (JUR-0016): Gambling Ordinance Cap. 148 and Betting Duty Ordinance Cap. 108; HKJC is the only authorised operator; offshore betting made illegal in 2002 amendment. Only old LegCo papers seen; elegislation.gov.hk URL not seen.",
+    "Taiwan (JUR-0095): Criminal Code Art. 266 amended Jan 2022 to cover online gambling; Sports Lottery Issuance Act amended 2025; state sports lottery is the only legal betting. No usable law.moj.gov.tw URL confirmed (the one seen carried a constitution code).",
+    "Pakistan: Prevention of Gambling Act 1977 (based on Public Gambling Act 1867); a National Assembly PDF is cited but no URL seen.",
+    "Saudi Arabia, Kuwait, Qatar, Oman, Bahrain: prohibited on religious/legal grounds; only generic commentary found; no official URLs.",
+    "Not yet searched individually: Brunei, Jordan, Mauritania, Bangladesh, China, Laos, Lebanon, Algeria, Tunisia, Egypt, Nepal, Bhutan, Sri Lanka, Tonga, plus the 13 unclear and 17 sanctions-driven jurisdictions."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0004",
+      "jurisdiction_name": "Malaysia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Attorney General's Chambers (Laws of Malaysia)",
+      "url": "http://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20495.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Betting Act 1953 (Act 495). URL seen as a link on a Wikipedia page, not opened. Common Gaming Houses Act 1953 (Act 289) URL not seen. 2026 reform of both Acts and a Cyber Crime Bill reported by trade press only."
+    },
+    {
+      "jurisdiction_id": "JUR-0091",
+      "jurisdiction_name": "Turkey",
+      "territorial_scope": "Country",
+      "language": "Turkish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Spor Toto Organisation (Youth and Sports Ministry)",
+      "url": "https://www.sportoto.gov.tr/tarihce",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "State sports-betting body under Law 7258. Page seen cited in an academic article; not opened. Pointer for the monopoly, not a licensing route for private operators."
+    }
+  ]
+}

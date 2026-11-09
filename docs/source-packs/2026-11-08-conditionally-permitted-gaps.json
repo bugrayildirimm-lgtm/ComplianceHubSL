@@ -1,0 +1,226 @@
+{
+  "pack_id": "2026-11-08-conditionally-permitted-gaps",
+  "prepared_by": "Claude",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Sources import as 'Awaiting source verification'; no legal determination is made.",
+    "Collection authorisation fields are left blank for the compliance lead to set.",
+    "No requirements are proposed in this pack.",
+    "Every URL here appeared in search results; none has been opened or retrieval-tested."
+  ],
+  "coverage_gaps": [
+    "Nigeria: a Mondaq article suggests the NLRC's role may now be limited to the FCT; this is unchecked and affects which regulator matters. Needs a legal check.",
+    "Germany: GlüStV 2021 reportedly expires 31 Dec 2028 and is under evaluation, with stake limits eased from 1 Jul 2026 (trade source, unverified). A source for the evaluation/successor treaty is missing.",
+    "Netherlands: confirm the Regeling kansspelen op afstand and Besluit kansspelen op afstand consolidated texts are held on wetten.overheid.nl; replace the vLex source with an official one.",
+    "Canada (Rest of): British Columbia's new Gaming Control Act (in force 13 Apr 2026, per trade press) has a source; no official regulator page for BC's renamed Independent Gambling Control Office, Manitoba, Saskatchewan, Quebec or Atlantic provinces was found.",
+    "Spain, Switzerland, Belgium, Italy, Portugal, Serbia, Croatia, Estonia, Latvia, Colombia, Mexico, Bosnia: not yet audited."
+  ],
+  "sources": [
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0075",
+      "jurisdiction_name": "Nigeria",
+      "authority": "National Lottery Regulatory Commission (NLRC)",
+      "url": "https://nlrc-gov.ng/?p=791",
+      "source_type": "Regulator publication page",
+      "language": "English",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "NLRC General Guidelines: licence classes, application fees, documents. Appears on the NLRC's current site nlrc-gov.ng; the existing lro.abj.gov.ng source may be an older host of the same guidelines, so compare before keeping both."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0075",
+      "jurisdiction_name": "Nigeria",
+      "authority": "National Lottery Regulatory Commission (NLRC)",
+      "url": "https://nlrc-gov.ng/?p=3685",
+      "source_type": "Regulator publication page",
+      "language": "English",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "NLRC announcement of the Remote/Offshore Operator Permit (ROP), dated Aug 2024 on the NLRC site. Relevant to offshore suppliers/operators. Not yet read in full."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0080",
+      "jurisdiction_name": "Germany",
+      "authority": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "url": "https://gluecksspiel-behoerde.de/images/pdf/Barrierefreie_Dokumente/20240909_Hinweise_Auslegung_Gluecksspielstaatsvertrag_2021_virtuelle_Automatenspiele_DE_BF.pdf",
+      "source_type": "Regulator publication page",
+      "language": "German",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "GGL interpretation notes on the GlüStV 2021 for virtual slot games (file dated 9 Sep 2024). Not read in full; check whether a newer version supersedes it."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0080",
+      "jurisdiction_name": "Germany",
+      "authority": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "url": "https://gluecksspiel-behoerde.de/images/pdf/Barrierefreie_Dokumente/20241230_Merkblatt_Antraege_Erlaubnis_einzelner_virtueller_Automatenspiele_DE_BF.pdf",
+      "source_type": "Regulator publication page",
+      "language": "German",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards",
+        "Market entry and licensing"
+      ],
+      "notes": "GGL leaflet on applications for permission for individual virtual slot games (file dated 30 Dec 2024): game requirements and application route."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0080",
+      "jurisdiction_name": "Germany",
+      "authority": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "url": "https://gluecksspiel-behoerde.de/images/pdf/Barrierefreie_Dokumente/20250108_Merkblatt_Antraege_Erlaubnis_virtuelle_Automatenspiele_DE_BF.pdf",
+      "source_type": "Regulator publication page",
+      "language": "German",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "GGL leaflet on operator permission for virtual slots (file dated 8 Jan 2025). Operator-level; included for the two-step permission structure."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0072",
+      "jurisdiction_name": "Spain",
+      "authority": "Dirección General de Ordenación del Juego (DGOJ) via BOE",
+      "url": "https://www.boe.es/boe/dias/2024/06/22/pdfs/BOE-A-2024-12639.pdf",
+      "source_type": "Official gazette",
+      "language": "Spanish",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "BOE-A-2024-12639: DGOJ resolution (6 Jun 2024) approving the monitoring-system data model and amending annexes of two earlier technical-specification resolutions. Not read in full; confirm which resolutions it amends against the sources already held."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0072",
+      "jurisdiction_name": "Spain",
+      "authority": "Dirección General de Ordenación del Juego (DGOJ)",
+      "url": "https://ordenacionjuego.es/ca/cmis/document/alfresco/fa4a00e1-4150-435b-a339-d7838bf81bd6",
+      "source_type": "Regulator publication page",
+      "language": "Spanish",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "DGOJ-hosted copy of the 6 Jun 2024 resolution. Possible duplicate of the BOE entry above; keep whichever the compliance lead prefers as the primary."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0072",
+      "jurisdiction_name": "Spain",
+      "authority": "Ministerio de Consumo / BOE",
+      "url": "https://www.boe.es/boe/dias/2020/11/04/pdfs/BOE-A-2020-13495.pdf",
+      "source_type": "Official gazette",
+      "language": "Spanish",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Real Decreto 958/2020 on commercial communications of gambling activities (BOE 4 Nov 2020). Advertising rules; add only if advertising is in scope for the baseline."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0070",
+      "jurisdiction_name": "The Netherlands",
+      "authority": "Kansspelautoriteit (KSA)",
+      "url": "https://kansspelautoriteit.nl/publish/library/30/0459_ksa_keuringsschema_2-1_spelsystemen_kansspelen_op_afstand_nl_wr.pdf",
+      "source_type": "Technical standards",
+      "language": "Dutch",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "KSA Keuringsschema 2.1 (conformity assessment schema for remote gambling game systems); revision note dated Oct 2024. Check for a later version."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0084",
+      "jurisdiction_name": "Canada (Rest of)",
+      "authority": "Alberta Gaming, Liquor & Cannabis (AGLC)",
+      "url": "https://aglc.ca/igaming",
+      "source_type": "Regulator publication page",
+      "language": "English",
+      "topics": [
+        "Market entry and licensing",
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "AGLC iGaming registration guide (operators and suppliers). Alberta sits within 'Canada (Rest of)' in the hub; trade press reports its regulated market launched 13 Jul 2026, but confirm on AGLC pages."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0084",
+      "jurisdiction_name": "Canada (Rest of)",
+      "authority": "Government of Alberta (Service Alberta and Red Tape Reduction)",
+      "url": "https://www.alberta.ca/system/files/sartr-igaming-phase-3-factsheet.pdf",
+      "source_type": "Other official",
+      "language": "English",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Alberta government fact sheet (13 Jan 2026) describing the iGaming Alberta Act, the Jan 2026 regulation amendments and AGLC standards."
+    }
+  ]
+}

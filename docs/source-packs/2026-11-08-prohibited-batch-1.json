@@ -1,0 +1,192 @@
+{
+  "pack_id": "2026-11-08-prohibited-batch-1",
+  "prepared_by": "Claude",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Sources import as 'Awaiting source verification'; no legal determination is made.",
+    "Internal classification (Prohibited Territory) is unchanged and is not a legal determination.",
+    "Collection authorisation fields are left blank for the compliance lead to set.",
+    "No requirements are proposed; these are watch-list sources only."
+  ],
+  "coverage_gaps": [
+    "Brazil: this is a licensing regime (Law 14.790/2023, SPA/MF), not a prohibition; the 'Prohibited Territory' label may be out of date and should be reviewed by the compliance lead. Only the law text and SPA page are listed; individual SPA ordinances (e.g. 827/2024, 722/2024) were seen only on secondary sites, and the DOU URL was not confirmed.",
+    "India: Act and consolidated text now listed. The Promotion and Regulation of Online Gaming Rules 2026 (G.S.R. notification, 22 April 2026) and the Online Gaming Authority of India have no official URL seen yet; commencement date of 1 May 2026 comes from legal press, not the gazette.",
+    "Japan: Penal Code prohibition plus 2025 amendments to the gambling addiction countermeasures law (reported by law firms). The amended Basic Act on Countermeasures against Gambling Addiction (Act 74 of 2018; amendment promulgated 10 July 2025, in force 25 Sept 2025, per prefectural government pages) is on e-Gov, and the National Police Agency has an online-casino page, but I did not see their exact URLs, so none is listed.",
+    "Philippines: POGO ban (reported as RA 12312) and PAGCOR domestic e-gaming licensing. Search results confirm RA 12312 (Anti-POGO Act of 2025, signed 23 Oct 2025, per news reports) but no official PAGCOR or Official Gazette URL was seen, so none is listed. The Philippines has a licensed domestic online market, which may conflict with the 'Prohibited' label.",
+    "UAE: federal licensing via GCGRA now exists (reportedly effective 1 June 2026 per law-firm sources, unverified); the federal commercial gaming legislation is reported as not publicly available. The 'Prohibited' label may be out of date.",
+    "Australia: a trade site reports the Interactive Gambling Amendment (Gambling Reform) Bill 2026 passed on 19 August 2026; unverified and no official source seen. Federal Register of Legislation URL not confirmed.",
+    "Singapore: Gambling Control Act 2022 on Singapore Statutes Online was not opened directly; sso.agc.gov.sg is only mentioned by a GRA advisory.",
+    "Not yet researched: the other 69 Prohibited Territories."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0059",
+      "jurisdiction_name": "Brazil",
+      "language": "Portuguese",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Presidency of the Republic (Planalto)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14790.htm",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette",
+        "Market entry and licensing"
+      ],
+      "notes": "Law 14.790/2023 on fixed-odds betting and online games. URL taken from a law-firm PDF; confirm it opens the current text."
+    },
+    {
+      "jurisdiction_id": "JUR-0059",
+      "jurisdiction_name": "Brazil",
+      "language": "Portuguese",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Secretaria de Prêmios e Apostas, Ministério da Fazenda",
+      "url": "https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing",
+        "Enforcement and sanctions"
+      ],
+      "notes": "Regulator of fixed-odds betting and online games. Page path inferred from an official SPA document URL; confirm it opens."
+    },
+    {
+      "jurisdiction_id": "JUR-0028",
+      "jurisdiction_name": "Australia",
+      "language": "English",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+      "url": "https://www.communications.gov.au/what-we-do/internet/internet-governance/online-gambling",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette",
+        "Market entry and licensing"
+      ],
+      "notes": "Policy page for the Interactive Gambling Act 2001. URL taken from an official PDF; confirm it opens."
+    },
+    {
+      "jurisdiction_id": "JUR-0028",
+      "jurisdiction_name": "Australia",
+      "language": "English",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Australian Communications and Media Authority (ACMA)",
+      "url": "https://www.acma.gov.au/articles/2025-10/latest-illegal-online-gambling-websites-blocked",
+      "source_type": "Enforcement publication",
+      "topics": [
+        "Enforcement and sanctions"
+      ],
+      "notes": "Example of ACMA's recurring blocking announcements; this is a dated article, so a stable ACMA enforcement or news index should replace it once found."
+    },
+    {
+      "jurisdiction_id": "JUR-0093",
+      "jurisdiction_name": "The United Arab Emirates",
+      "language": "English/Arabic",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "General Commercial Gaming Regulatory Authority (GCGRA)",
+      "url": "https://www.gcgra.gov.ae/en/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Federal commercial gaming regulator. URL appeared as a citation in a law-firm article; confirm it opens."
+    },
+    {
+      "jurisdiction_id": "JUR-0102",
+      "jurisdiction_name": "Singapore",
+      "language": "English",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Gambling Regulatory Authority of Singapore",
+      "url": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Enforcement and sanctions",
+        "Market entry and licensing"
+      ],
+      "notes": "States that unlicensed remote gambling is unlawful, including services offered from abroad to people in Singapore. Seen in search results, not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0102",
+      "jurisdiction_name": "Singapore",
+      "language": "English",
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "authority": "Ministry of Home Affairs, Singapore",
+      "url": "https://www.mha.gov.sg/what-we-do/regulating-casino-and-gambling-industry",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Lists the Gambling Control Act and GRA Act in force from 1 August 2022. Seen in search results, not opened."
+    },
+    {
+      "jurisdiction_id": "JUR-0015",
+      "jurisdiction_name": "India",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette",
+        "Enforcement and sanctions"
+      ],
+      "authority": "Ministry of Electronics and Information Technology (MeitY)",
+      "url": "https://www.meity.gov.in/documents/act-and-policies/promotion-and-regulation-of-online-gaming-act-2025-and-its-corrigenda-kTMxQjMtQWa?pageTitle=Promotion-and-Regulation-of-Online-Gaming-Act,-2025-and-its-Corrigenda",
+      "notes": "MeitY page for the Online Gaming Act 2025 (Act 32 of 2025) and corrigenda. URL taken from MeitY consultation text quoted by a third party; confirm it opens. Rules 2026 and OGAI notices are expected on the same site."
+    },
+    {
+      "jurisdiction_id": "JUR-0015",
+      "jurisdiction_name": "India",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette",
+        "Enforcement and sanctions"
+      ],
+      "authority": "India Code (Government of India)",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/22148/1/a2025-32.pdf",
+      "notes": "Consolidated Act text, shown as of 5 May 2026. Seen in search results, not opened. Per the Act, commencement is by gazette notification; secondary sources say 1 May 2026."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "pack_id": "2026-11-08-conditionally-permitted-gaps-2",
+  "prepared_by": "Claude",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "Sources import as 'Awaiting source verification'; no legal determination is made.",
+    "Collection authorisation fields are left blank for the compliance lead to set.",
+    "No requirements are proposed in this pack.",
+    "Every URL here appeared in search results; none has been opened or retrieval-tested."
+  ],
+  "coverage_gaps": [
+    "Bosnia: Republika Srpska (Law in force since 19 Mar 2019, per a trade news item) and Brčko District have no official source; the existing sources are Federation-only.",
+    "Italy: trade press reports ADM moved the new online-gaming system start to 15 Feb 2027 (unverified). The final ADM technical rules and certification calendar need an official ADM URL.",
+    "Portugal: amendments to the online technical requirements (Regulamento 379-A/2016 and 99/2018) are only seen on an unofficial site; confirm on Diário da República.",
+    "Colombia: only the 2022 amendment found; confirm the current version of the internet-games Technical Requirements on coljuegos.gov.co.",
+    "Not researched this round: Serbia, Croatia, Estonia, Latvia, Mexico. Montenegro has its own pack."
+  ],
+  "sources": [
+    {
+      "territorial_scope": "Subnational state or province",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0085",
+      "jurisdiction_name": "Bosnia",
+      "authority": "Federal Ministry of Finance (Federation of BiH)",
+      "url": "https://fmf.gov.ba/Content/Open/101280",
+      "source_type": "Regulator publication page",
+      "language": "Bosnian",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards",
+        "Market entry and licensing"
+      ],
+      "notes": "Rulebook on internet games of chance (Sl. novine FBiH 59/16, 23/24 as shown): approval by the Ministry and technical rules for online games. Federation of BiH only. Check whether the existing FMF sources already include it."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0071",
+      "jurisdiction_name": "Switzerland",
+      "authority": "Federal Office of Justice (FOJ)",
+      "url": "https://www.bj.admin.ch/de/der-rechtliche-rahmen-der-geldspiele-in-der-schweiz",
+      "source_type": "Regulator publication page",
+      "language": "German",
+      "topics": [
+        "Legislation and gazette",
+        "Market entry and licensing"
+      ],
+      "notes": "FOJ overview of the Swiss gambling legal framework (page dated 12 Feb 2026) listing the Geldspielgesetz and its ordinances. Useful as the index for law changes."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0086",
+      "jurisdiction_name": "Belgium",
+      "authority": "Belgian Gaming Commission (Kansspelcommissie)",
+      "url": "https://www.gamingcommission.be/en/operators/licences/casinos-licence-a-a",
+      "source_type": "Regulator publication page",
+      "language": "English",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Licence A / A+ page: online casino games require the supplementary A+ licence; lists technical-characteristic and safety-check conditions. B2B licence page not found in search; confirm it is covered by the five Belgian sources already held."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0079",
+      "jurisdiction_name": "Italy",
+      "authority": "European Commission TRIS database (ADM notification 2024/…)",
+      "url": "https://technical-regulation-information-system.ec.europa.eu/it/notification/26107/print",
+      "source_type": "Other official",
+      "language": "Italian",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "EU TRIS notification of ADM's draft Technical Rules for remote gaming under D.Lgs. 25 Mar 2024 n. 41. Shows the rules and Member State comments (including Malta's). Not the final ADM text; use to locate the final rules."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0074",
+      "jurisdiction_name": "Portugal",
+      "authority": "Serviço de Regulação e Inspeção de Jogos (SRIJ) via Diário da República",
+      "url": "https://files.diariodarepublica.pt/gratuitos/2s/2015/07/2S138A0000S01.pdf",
+      "source_type": "Official gazette",
+      "language": "Portuguese",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "Regulamento 419-A/2015 on recognition of certification bodies for the technical gaming system (DR 2nd series, July 2015). Certification route relevant to suppliers."
+    },
+    {
+      "territorial_scope": "Country",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08",
+      "jurisdiction_id": "JUR-0083",
+      "jurisdiction_name": "Colombia",
+      "authority": "Coljuegos (compiled in Rama Judicial SIDN database)",
+      "url": "https://sidn.ramajudicial.gov.co/SIDN/NORMATIVA/TEXTOS_COMPLETOS/8_RESOLUCIONES/RESOLUCIONES%202022/AMRJSA%20Resoluciones%2020221000026224%20de%202022%20(Reglamentos%20de%20los%20juegos%20de%20suerte%20y%20azar).pdf",
+      "source_type": "Legislation database",
+      "language": "Spanish",
+      "topics": [
+        "Slots technical standards",
+        "Live casino technical standards"
+      ],
+      "notes": "Compilation including Coljuegos Resolution 20224000026034 of 14 Oct 2022 amending the Technical Requirements for internet-operated games. Hosted on a judicial database, not Coljuegos; replace with the Coljuegos or Diario Oficial copy if one is found. Later amendments not checked."
+    }
+  ]
+}

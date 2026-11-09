@@ -1,0 +1,1044 @@
+{
+  "pack_id": "2026-11-09-vixio-link-harvest",
+  "prepared_by": "Claude (chat research), for Technical Compliance Lead",
+  "status": "Draft for import; nothing verified",
+  "rules": [
+    "URLs harvested from Vixio GamblingCompliance reference links; no Vixio text reproduced.",
+    "Internal classification is not a legal determination."
+  ],
+  "coverage_gaps": [
+    "JUR ids were checked against Jurisdiction_export.csv.",
+    "France, Cambodia, Papua New Guinea, UK Virgin Islands, Myanmar: no usable official links obtained (Vixio page blocked, missing or not covered).",
+    "Mexico: no DOF link for the 2026 reform; only the regulation and DGJS home page.",
+    "All links come from Vixio pages as reference links and were not opened. Scheme assumed https unless noted."
+  ],
+  "sources": [
+    {
+      "jurisdiction_id": "JUR-0017",
+      "jurisdiction_name": "Georgia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/document/view/30988",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Believed to be the gambling law. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0045",
+      "jurisdiction_name": "Hungary",
+      "territorial_scope": "Country",
+      "language": "Hungarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Supervisory Authority of Regulated Activities (SZTFH)",
+      "url": "https://sztfh.hu/tevekenysegek/szerencsejatek-felugyelet/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0045",
+      "jurisdiction_name": "Hungary",
+      "territorial_scope": "Country",
+      "language": "Hungarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "SZTFH",
+      "url": "https://sztfh.hu/tevekenysegek/szerencsejatek-felugyelet/engedelykoteles-szerencsejatekok/online-kaszinojatek/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Online casino licensing page. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0045",
+      "jurisdiction_name": "Hungary",
+      "territorial_scope": "Country",
+      "language": "Hungarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "SZTFH",
+      "url": "https://sztfh.hu/nyilvantartasok/engedelyek-kozhiteles/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Register of permits. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0021",
+      "jurisdiction_name": "Cyprus",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Betting Authority",
+      "url": "https://nba.gov.cy/rythmistiko-plesio/kanonismi/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Regulations page. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0021",
+      "jurisdiction_name": "Cyprus",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Betting Authority",
+      "url": "https://nba.gov.cy/en/regulated-entities/registers/class-b/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Register of licensed entities (class B). Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0021",
+      "jurisdiction_name": "Cyprus",
+      "territorial_scope": "Country",
+      "language": "Greek",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Gaming and Casino Supervision Commission",
+      "url": "https://www.cgc.org.cy/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Casino regulator. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0021",
+      "jurisdiction_name": "Cyprus",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "CyLaw",
+      "url": "http://www.cylaw.org/nomoi/enop/non-ind/2019_1_37/full.html",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Cypriot law 37(I)/2019; identity not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0006",
+      "jurisdiction_name": "Lithuania",
+      "territorial_scope": "Country",
+      "language": "Lithuanian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Gaming Control Authority",
+      "url": "https://lpt.lrv.lt/lt/atsakingas-losimas/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0006",
+      "jurisdiction_name": "Lithuania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "e-TAR (legal acts register)",
+      "url": "https://www.e-tar.lt/portal/en/legalAct/7b08d3c0379b11f0b070ee7f1ceefc75",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "English-language act; which act not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0026",
+      "jurisdiction_name": "Bulgaria",
+      "territorial_scope": "Country",
+      "language": "Bulgarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Revenue Agency",
+      "url": "https://nra.bg/wps/portal/nra/zakonodatelstvo/hazart/b8f5de4e-c45e-40fe-8880-7a68a1908df4",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing",
+        "Legislation and gazette"
+      ],
+      "notes": "Gambling section of the NRA site. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0026",
+      "jurisdiction_name": "Bulgaria",
+      "territorial_scope": "Country",
+      "language": "Bulgarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Revenue Agency",
+      "url": "https://nra.bg/wps/portal/nra/zakonodatelstvo/hazart/naredbi/b5de9cde-7362-4164-b588-b4f459fac915",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Ordinances under the Gambling Act. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0026",
+      "jurisdiction_name": "Bulgaria",
+      "territorial_scope": "Country",
+      "language": "Bulgarian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Legislation portal",
+      "url": "https://legislation.apis.bg/doc/536698",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Third-party legal portal; confirm it is the Gambling Act. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0100",
+      "jurisdiction_name": "South Africa",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Gambling Board",
+      "url": "https://www.ngb.org.za/wp-content/uploads/2024/02/6_1-National_Gambling_Act.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "National Gambling Act. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0100",
+      "jurisdiction_name": "South Africa",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "National Gambling Board",
+      "url": "https://www.ngb.org.za/media-releases/interactive-gambling-is-illegal-in-south-africa/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Enforcement and sanctions"
+      ],
+      "notes": "Board statement that interactive gambling is illegal there; relevant to the Prohibited label. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0064",
+      "jurisdiction_name": "Kenya",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Kenya Law",
+      "url": "https://new.kenyalaw.org/akn/ke/act/2025/14/eng@2025-08-12",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Act 14 of 2025; believed to be the gambling control act, not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0064",
+      "jurisdiction_name": "Kenya",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Financial Reporting Centre",
+      "url": "https://www.frc.go.ke/wp-content/uploads/2024/03/AML-CFT-GUIDANCE-TO-CASINOS-15.11-Final.pdf",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Anti-money laundering"
+      ],
+      "notes": "AML guidance for casinos. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0047",
+      "jurisdiction_name": "Panama",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Gaceta Oficial",
+      "url": "https://www.gacetaoficial.gob.pa/pdfTemp/28985/GacetaNo_28985_20200320.pdf",
+      "source_type": "Official gazette",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Gaceta 28985 of 20 Mar 2020; believed to be the Junta de Control de Juegos online regulation. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0003",
+      "jurisdiction_name": "North-Macedonia",
+      "territorial_scope": "Country",
+      "language": "Macedonian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Ministry of Finance",
+      "url": "https://finance.gov.mk/wp-content/uploads/2009/05/Law-on-games-of-chance-and-entertianment-games.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Old (2009-era) law text, replaced by the new law in force 14 July 2026. Look for the current version. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0003",
+      "jurisdiction_name": "North-Macedonia",
+      "territorial_scope": "Country",
+      "language": "Macedonian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Public Revenue Office",
+      "url": "https://www.ujp.gov.mk/mk/regulativa/opis/25",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0030",
+      "jurisdiction_name": "Albania",
+      "territorial_scope": "Country",
+      "language": "Albanian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Official Publications Centre (QBZ)",
+      "url": "https://qbz.gov.al/eli/ligj/2015/12/21/155/9c1bb04b-3ca7-4942-bb70-85b86d11beda",
+      "source_type": "Official gazette",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 155/2015 on gambling. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0030",
+      "jurisdiction_name": "Albania",
+      "territorial_scope": "Country",
+      "language": "Albanian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Assembly of Albania",
+      "url": "https://kuvendiwebfiles.blob.core.windows.net/webfiles/202402230845321307ligj%20%20nr.%2018%2C%20dt.%20%2015.2.2024.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 18/2024 reopening online sports betting. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0059",
+      "jurisdiction_name": "Brazil",
+      "territorial_scope": "Country",
+      "language": "Portuguese",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Planalto (Presidency)",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1394.htm",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Provisional measure 1394 of 2026; subject not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0059",
+      "jurisdiction_name": "Brazil",
+      "territorial_scope": "Country",
+      "language": "Portuguese",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Diário Oficial da União",
+      "url": "https://www.in.gov.br/en/web/dou/-/portaria-spa/mf-n-1.231-de-31-de-julho-de-2024-575670297",
+      "source_type": "Official gazette",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "SPA/MF Ordinance 1.231/2024. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0106",
+      "jurisdiction_name": "Philippines",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "PAGCOR",
+      "url": "https://www.pagcor.ph/regulatory/cegs.php",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Licensing page for e-games. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0106",
+      "jurisdiction_name": "Philippines",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Official Gazette",
+      "url": "https://www.officialgazette.gov.ph/downloads/2024/11nov/20241105-EO-74-FRM.pdf",
+      "source_type": "Official gazette",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Executive Order 74 (Nov 2024). Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0093",
+      "jurisdiction_name": "United Arab Emirates",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "General Commercial Gaming Regulatory Authority",
+      "url": "https://www.gcgra.gov.ae/en/licensing/license-types/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0093",
+      "jurisdiction_name": "United Arab Emirates",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "GCGRA",
+      "url": "https://www.gcgra.gov.ae/en/legislation-compliance/legislation/technical-standards/",
+      "source_type": "Technical standards",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0093",
+      "jurisdiction_name": "United Arab Emirates",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "GCGRA",
+      "url": "https://www.gcgra.gov.ae/en/legislation-compliance/compliance/certified-service-providers/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "List of certified service providers (testing). Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0066",
+      "jurisdiction_name": "Cote D'Ivoire",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Autorité de régulation des jeux de hasard (ARJH)",
+      "url": "https://www.arjh.ci/operators",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0066",
+      "jurisdiction_name": "Cote D'Ivoire",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "ARJH",
+      "url": "https://www.arjh.ci/documents/decret.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0066",
+      "jurisdiction_name": "Cote D'Ivoire",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Droit-Afrique",
+      "url": "https://www.droit-afrique.com/uploads/RCI-Loi-2020-480-regime-juridique-jeux-hasard.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 2020-480; third-party legal site. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0066",
+      "jurisdiction_name": "Cote D'Ivoire",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "LONACI",
+      "url": "https://www.lonaci.ci/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "State lottery with betting monopoly. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0094",
+      "jurisdiction_name": "Tanzania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Gaming Board of Tanzania",
+      "url": "https://www.gamingboard.go.tz/fees",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Fees page. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0094",
+      "jurisdiction_name": "Tanzania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Gaming Board of Tanzania",
+      "url": "https://www.gamingboard.go.tz/uploads/documents/sw-1654082087-Gaming%20Act%20Cap%2041%20RE2019.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Gaming Act Cap. 41. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0094",
+      "jurisdiction_name": "Tanzania",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Gaming Board of Tanzania",
+      "url": "https://www.gamingboard.go.tz/uploads/documents/sw-1654111587-PROCEDURES%20FOR%20SERVICE%20PROVIDER%20LICENCE%20EXTRACT%20FEB%202021.docx.pdf",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Service provider licence procedures; directly relevant to a B2B supplier. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0029",
+      "jurisdiction_name": "Angola",
+      "territorial_scope": "Country",
+      "language": "Portuguese",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Instituto de Supervisão de Jogos",
+      "url": "https://isj.minfin.gov.ao/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0029",
+      "jurisdiction_name": "Angola",
+      "territorial_scope": "Country",
+      "language": "Portuguese",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Instituto de Supervisão de Jogos",
+      "url": "https://isj.minfin.gov.ao/legislacao",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0077",
+      "jurisdiction_name": "Mexico",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Dirección General de Juegos y Sorteos (SEGOB)",
+      "url": "http://www.juegosysorteos.gob.mx/es/Juegos_y_Sorteos/home",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0077",
+      "jurisdiction_name": "Mexico",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Cámara de Diputados",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LFJS.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Regulation of the Federal Law on Games and Lotteries. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0082",
+      "jurisdiction_name": "Croatia",
+      "territorial_scope": "Country",
+      "language": "Croatian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Tax Administration",
+      "url": "https://www.porezna-uprava.hr/HR_porezni_sustav/_layouts/15/in2.vuk2019.sp.propisi.intranet/propisi.aspx",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Gambling regulations list. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Games of Chance Administration",
+      "url": "https://uis.gov.rs/rsc/olaboratorije",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "Approved testing laboratories. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0073",
+      "jurisdiction_name": "Serbia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Games of Chance Administration",
+      "url": "https://uis.gov.rs/static/uploads/584_Regulation_it_and_communication_electronic_communication.pdf",
+      "source_type": "Technical standards",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0081",
+      "jurisdiction_name": "Estonia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Tax and Customs Board (EMTA)",
+      "url": "https://www.emta.ee/en/business-client/registration-business/gambling-operators/applying-permits",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0078",
+      "jurisdiction_name": "Latvia",
+      "territorial_scope": "Country",
+      "language": "Latvian",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Lotteries and Gambling Supervisory Inspection (old site)",
+      "url": "https://www.iaui.gov.lv/lv/azartspelu-pakalpojumu-sniegsanas-licences-sanemsanas-nosacijumi",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Likely stale after supervision moved to the State Revenue Service on 1 Apr 2026. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0078",
+      "jurisdiction_name": "Latvia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Likumi.lv",
+      "url": "https://likumi.lv/ta/id/298075",
+      "source_type": "Technical standards",
+      "topics": [
+        "Technical standards and certification"
+      ],
+      "notes": "Regulation on the interactive gambling operating system. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0088",
+      "jurisdiction_name": "Zimbabwe",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Lotteries and Gaming Board",
+      "url": "https://lgb.co.zw/wp-content/uploads/2022/02/LOTTERIES-AND-GAMING-ACT.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0088",
+      "jurisdiction_name": "Zimbabwe",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Lotteries and Gaming Board",
+      "url": "https://lgb.co.zw/index.php/zimbabwe-to-allow-online-betting/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Board news item on online betting; Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0001",
+      "jurisdiction_name": "Namibia",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "NamibLII",
+      "url": "https://namiblii.org/akn/na/act/2018/13/eng@2021-12-01",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Act identity not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0060",
+      "jurisdiction_name": "Paraguay",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Comisión Nacional de Juegos de Azar (MEF)",
+      "url": "https://www.mef.gov.py/dependencias/gerencia-general/comision-nacional-juegos-azar",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0060",
+      "jurisdiction_name": "Paraguay",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "MEF",
+      "url": "https://www.mef.gov.py/sites/default/files/2025-01/Ley%207438.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 7438; Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0068",
+      "jurisdiction_name": "Bolivia",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Autoridad de Fiscalización de Juegos de Azar (AJ)",
+      "url": "https://www.aj.gob.bo/informacion-de-loteria-azar-y-sorteo/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0068",
+      "jurisdiction_name": "Bolivia",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "AJ",
+      "url": "https://www.aj.gob.bo/wp-content/uploads/2025/08/Ley-717.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 717; Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0067",
+      "jurisdiction_name": "Cameroon",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Prime Minister's Office",
+      "url": "https://www.spm.gov.cm/site/sites/default/files/decret_jeux_hasard.pdf",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Gambling decree. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0067",
+      "jurisdiction_name": "Cameroon",
+      "territorial_scope": "Country",
+      "language": "English",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Presidency",
+      "url": "https://www.prc.cm/en/multimedia/documents/10555-law-n-2025-012-of-17-12-2025",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 2025-012 of 17 Dec 2025; subject not confirmed. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0046",
+      "jurisdiction_name": "El Salvador",
+      "territorial_scope": "Country",
+      "language": "Spanish",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "Lotería Nacional de Beneficencia",
+      "url": "https://www.lnb.gob.sv/operadores-autorizados/",
+      "source_type": "Regulator publication page",
+      "topics": [
+        "Market entry and licensing"
+      ],
+      "notes": "Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    },
+    {
+      "jurisdiction_id": "JUR-0063",
+      "jurisdiction_name": "Monaco",
+      "territorial_scope": "Country",
+      "language": "French",
+      "collection_method": "Direct page retrieval",
+      "check_frequency": "Weekly",
+      "priority": false,
+      "verification_status": "Awaiting source verification",
+      "discovered_by": "Claude research pack 2026-11-08 (links via Vixio)",
+      "authority": "LégiMonaco",
+      "url": "https://legimonaco.mc/tnc/loi/1987/06-12-1.103/",
+      "source_type": "Legislation database",
+      "topics": [
+        "Legislation and gazette"
+      ],
+      "notes": "Law 1.103 of 1987 on games of chance. Official-looking link taken from a Vixio GamblingCompliance page (Nov 2026); not opened or verified."
+    }
+  ]
+}
