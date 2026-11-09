@@ -28,6 +28,9 @@ Frontend development: `npm start` in one terminal, `cd web && npx vite` in anoth
 (in the image) and outbound HTTPS to the official regulator sites. Put it behind your TLS reverse proxy. Keep
 `SCHEDULER_ENABLED=false` until Base44's own schedules are switched off.
 
+The Source review "Retrieve sample" button is off by default. To turn it on set `DIRECT_FETCH_ENABLED=true` and
+`FETCH_CONTACT` (a URL or email address for the user agent); see `.env.example` and `docs/spec.md`.
+
 ## Tests
 
 `npm test` runs the query layer, access rules and an end-to-end function call against an in-memory database.

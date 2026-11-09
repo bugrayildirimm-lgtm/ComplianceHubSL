@@ -1,7 +1,8 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.54';
 import { resolveActor, json } from '../../shared/compliance.ts';
 import { evaluateRoster, ACCESS_ROLES } from '../../shared/accessPolicy.ts';
-import { outboundDecision, FETCH_MAINTENANCE } from '../../shared/protectedFetch.ts';
+import { outboundDecision, FETCH_MAINTENANCE, directFetchConfig } from '../../shared/protectedFetch.ts';
+import { addressVerdict, checkUrl, parseRobots, robotsAllows, registrableDomain } from '../../shared/inspectFetch.ts';
 
 // Repeatable, isolated checks for the shared authorisation and outbound-request
 // logic. Fixtures only: no records are created, changed or deleted, and no
@@ -112,6 +113,24 @@ export default async function (req) {
         return { decision: outboundDecision('https://example.gov/publication'), paused: FETCH_MAINTENANCE.paused };
       }, (a) => a.paused === true && a.decision?.allowed === false),
     ];
+
+    // Retrieve-sample fetcher (sourceReview inspect only): pure policy checks, no network request is made.
+    cases.push(
+      runCase('direct retrieval is off by default and needs a contact when enabled', () => ({
+        off: directFetchConfig({}).enabled, enabledNoContact: directFetchConfig({ DIRECT_FETCH_ENABLED: 'true' }).ready, enabledWithContact: directFetchConfig({ DIRECT_FETCH_ENABLED: 'true', FETCH_CONTACT: 'compliance@example.test' }).ready,
+      }), (a) => a.off === false && a.enabledNoContact === false && a.enabledWithContact === true),
+      runCase('non-public addresses are refused (IPv4 and IPv6)', () => ['127.0.0.1', '10.1.2.3', '172.16.0.1', '192.168.1.1', '169.254.169.254', '100.64.0.1', '0.0.0.0', '224.0.0.1', '::1', 'fe80::1', 'fd00:ec2::254', '::ffff:127.0.0.1', '64:ff9b::7f00:1', '2001:db8::1', '2002:7f00:1::1']
+        .filter((ip) => addressVerdict(ip).public), (a) => Array.isArray(a) && a.length === 0),
+      runCase('public addresses are accepted', () => ['8.8.8.8', '93.184.216.34', '2606:4700:4700::1111'].filter((ip) => !addressVerdict(ip).public), (a) => Array.isArray(a) && a.length === 0),
+      runCase('URL policy refuses file:, credentials, odd ports and literal private hosts', () => ['file:///etc/passwd', 'https://user:pw@example.gov/', 'https://example.gov:8443/', 'http://127.0.0.1/', 'http://[::1]/', 'http://2130706433/']
+        .filter((url) => checkUrl(url).ok), (a) => Array.isArray(a) && a.length === 0),
+      runCase('URL policy accepts a plain public https URL', () => checkUrl('https://example.gov/publication').ok, (a) => a === true),
+      runCase('robots.txt: longest rule wins, product group beats *', () => {
+        const g = parseRobots(['User-agent: *', 'Disallow: /private', 'Allow: /private/open', '', 'User-agent: StakelogicComplianceHub', 'Disallow: /blocked$'].join('\n'));
+        return [robotsAllows(g, '/blocked'), robotsAllows(g, '/blocked/x'), robotsAllows(g, '/private/x')];
+      }, (a) => a[0] === false && a[1] === true && a[2] === true),
+      runCase('registrable domain keeps country-code second levels', () => [registrableDomain('www.gamingcommission.gov.uk'), registrableDomain('a.b.example.org')], (a) => a[0] === 'gamingcommission.gov.uk' && a[1] === 'example.org'),
+    );
 
     const fixtures = [
       { label: 'public https publication page', url: 'https://example.gov/publication' },

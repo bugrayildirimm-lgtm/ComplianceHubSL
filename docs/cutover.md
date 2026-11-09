@@ -35,6 +35,10 @@ overwritten by the final reload.
       to re-run. Check the added/duplicate counts it prints.
 
 ## 4. Switch on
+- [ ] **Replace `FETCH_CONTACT` before final cutover.** For the live trial it was set to the owner's own address
+      (temporary). It appears in the user agent that publishers see (`StakelogicComplianceHub/1.0 (+contact)`), so use a
+      shared Stakelogic mailbox. Set it in the server's `.env` only (never in the repo). `DIRECT_FETCH_ENABLED` only
+      affects the Source review "Retrieve sample" button; leave it `false` if that button is not wanted.
 - [ ] Set `SCHEDULER_ENABLED=true` and restart
 - [ ] Watch the first full cycle: CollectionJob rows appear, usage counters move, pending queue stays within limits,
       Notification and RegulatoryAlert show **no** spurious new items
